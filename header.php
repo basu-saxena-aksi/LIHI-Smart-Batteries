@@ -212,7 +212,7 @@
                     APPLICATIONS - TWO-COLUMN IMAGE DROPDOWN
                 ========================================== -->
 
-                <div class="nav-links-container has-dropdown nav-mega-item">
+                <!-- <div class="nav-links-container has-dropdown nav-mega-item">
 
                     <a href="<?php echo esc_url(home_url('/applications/')); ?>">
                         Applications
@@ -366,7 +366,7 @@
 
                     </div>
 
-                </div>
+                </div> -->
 
 
 
@@ -387,9 +387,9 @@
 
                     <div class="nav-dropdown">
 
-                        <a href="<?php echo esc_url(home_url('/news/')); ?>">
+                        <!-- <a href="<?php echo esc_url(home_url('/news/')); ?>">
                             News
-                        </a>
+                        </a> -->
 
                         <a href="<?php echo esc_url(home_url('/blog/')); ?>">
                             Blogs

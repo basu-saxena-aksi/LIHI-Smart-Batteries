@@ -1,4 +1,35 @@
 <footer>
+    <div class="foot-banner">
+        <div class="foot-banner-viewport">
+            <div class="foot-banner-track">
+                <span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M12 2L14.8 9.2L22 12L14.8 14.8L12 22L9.2 14.8L2 12L9.2 9.2Z" />
+                    </svg>
+                    <span class="foot-banner-copy">HAVE CUSTOM BATTERY REQUIREMENTS? CONTACT OUR TEAM</span>
+                </span>
+                <span aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2L14.8 9.2L22 12L14.8 14.8L12 22L9.2 14.8L2 12L9.2 9.2Z" />
+                    </svg>
+                    <span class="foot-banner-copy">HAVE CUSTOM BATTERY REQUIREMENTS? CONTACT OUR TEAM</span>
+                </span>
+                <span aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2L14.8 9.2L22 12L14.8 14.8L12 22L9.2 14.8L2 12L9.2 9.2Z" />
+                    </svg>
+                    <span class="foot-banner-copy">HAVE CUSTOM BATTERY REQUIREMENTS? CONTACT OUR TEAM</span>
+                </span>
+            </div>
+        </div>
+        <a href="<?php echo esc_url(home_url('/contact-us/')); ?>" class="link-btn">
+            <span>Customise Now</span>
+            <svg width="15" height="10" viewBox="0 0 13 10" aria-hidden="true">
+                <path d="M1,5 L11,5"></path>
+                <polyline points="8 1 12 5 8 9"></polyline>
+            </svg>
+        </a>
+    </div>
     <div class="foot-background">
         <div class="foot-marquee-track">
 

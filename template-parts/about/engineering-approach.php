@@ -159,43 +159,5 @@
             </div>
         </div>
 
-
-        <!-- AKSI AEROSPACE ECOSYSTEM -->
-        <div class="engineering-ecosystem">
-
-            <div class="engineering-ecosystem-icon">
-                <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
-                    <path d="M24 5L40 14V34L24 43L8 34V14L24 5Z" stroke="currentColor" stroke-width="1.6"
-                        stroke-linejoin="round" />
-                    <path d="M8 14L24 23L40 14M24 23V43" stroke="currentColor" stroke-width="1.6"
-                        stroke-linejoin="round" />
-                    <path d="M16 10L32 19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
-                </svg>
-            </div>
-
-            <div class="engineering-ecosystem-content">
-                <span class="engineering-ecosystem-label">
-                    BROADER ENGINEERING ECOSYSTEM
-                </span>
-
-                <h3>Supported by the AKSI Aerospace Ecosystem</h3>
-
-                <p>
-                    As part of the broader AKSI Aerospace engineering
-                    ecosystem, LiHi works within an environment that brings
-                    together engineering and manufacturing capabilities.
-                    This context supports LiHi’s focus on developing battery
-                    and energy storage solutions for a range of applications,
-                    while keeping quality and application requirements in view.
-                </p>
-            </div>
-
-            <div class="engineering-ecosystem-mark">
-                <span>AKSI</span>
-                <span>AEROSPACE</span>
-            </div>
-
-        </div>
-
     </div>
 </section>

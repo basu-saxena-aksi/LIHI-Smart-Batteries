@@ -8,10 +8,10 @@
             <div class="about-intro-heading">
                 <span class="about-intro-eyebrow">ABOUT LIHI</span>
 
-                <h2>
+                <!-- <h2>
                     Beyond Batteries.<br>
                     <span>Into the Future of Energy.</span>
-                </h2>
+                </h2> -->
             </div>
 
             <div class="about-intro-content">
