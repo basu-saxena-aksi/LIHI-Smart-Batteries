@@ -4092,7 +4092,7 @@ header {
 .faq-section {
     position: relative;
     padding: 50px 0;
-    background: #FFFFFF;
+    background: #f5f5f5 ;
 }
 
 .faq-layout {
@@ -7868,107 +7868,7 @@ header {
 }
 
 
-/* AKSI ECOSYSTEM PANEL */
 
-.engineering-ecosystem {
-    position: relative;
-    display: grid;
-    grid-template-columns: 75px minmax(0, 1fr) auto;
-    align-items: center;
-    gap: 30px;
-    margin-top: 55px;
-    padding: 38px 42px;
-    color: #fff;
-    background: var(--navy);
-    border-radius: 14px;
-    overflow: hidden;
-}
-
-.engineering-ecosystem::after {
-    content: "";
-    position: absolute;
-    top: -150px;
-    right: 100px;
-    width: 340px;
-    height: 340px;
-    border: 1px solid rgba(255, 255, 255, 0.07);
-    border-radius: 50%;
-    pointer-events: none;
-}
-
-.engineering-ecosystem-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 66px;
-    height: 66px;
-    color: #fff;
-    background: rgba(255, 255, 255, 0.09);
-    border: 1px solid rgba(255, 255, 255, 0.13);
-    border-radius: 14px;
-}
-
-.engineering-ecosystem-icon svg {
-    width: 38px;
-    height: 38px;
-}
-
-.engineering-ecosystem-content {
-    position: relative;
-    z-index: 1;
-    max-width: 820px;
-}
-
-.engineering-ecosystem-label {
-    display: inline-block;
-    margin-bottom: 12px;
-    color: #91aaff;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 1.7px;
-}
-
-.engineering-ecosystem-content h3 {
-    margin: 0 0 12px;
-    color: #fff;
-    font-size: var(--font-size-24);
-    font-weight: var(--font-weight-600);
-    line-height: 1.3;
-}
-
-.engineering-ecosystem-content p {
-    margin: 0;
-    color: rgba(255, 255, 255, 0.75);
-    font-size: 14px;
-    line-height: 1.85;
-}
-
-.engineering-ecosystem-mark {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 112px;
-    height: 112px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    color: rgba(255, 255, 255, 0.9);
-}
-
-.engineering-ecosystem-mark span:first-child {
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: 1px;
-}
-
-.engineering-ecosystem-mark span:last-child {
-    margin-top: 3px;
-    font-size: 7px;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-}
 
 
 /* RESPONSIVE */
@@ -7993,13 +7893,6 @@ header {
         gap: 22px;
     }
 
-    .engineering-ecosystem {
-        grid-template-columns: 65px minmax(0, 1fr);
-    }
-
-    .engineering-ecosystem-mark {
-        display: none;
-    }
 }
 
 @media (max-width: 768px) {
@@ -8043,16 +7936,6 @@ header {
         display: none;
     }
 
-    .engineering-ecosystem {
-        grid-template-columns: 1fr;
-        gap: 22px;
-        margin-top: 35px;
-        padding: 30px;
-    }
-
-    .engineering-ecosystem-content h3 {
-        font-size: var(--font-size-20);
-    }
 }
 
 @media (max-width: 480px) {
@@ -8088,17 +7971,7 @@ header {
         font-size: 13px;
     }
 
-    .engineering-ecosystem {
-        padding: 24px;
-    }
-
-    .engineering-ecosystem-content h3 {
-        font-size: var(--font-size-20);
-    }
-
-    .engineering-ecosystem-content p {
-        font-size: 13px;
-    }
+  
 }
 
 
@@ -11227,10 +11100,9 @@ label{
 
 
 
-/* =========================================
-   7. STATIC PAGES — INDUSTRIES AND APPLICATIONS
-   SINGLE INDUSTRY PAGE
-========================================= */
+/* =========================================================
+   SINGLE INDUSTRY — PAGE LAYOUT
+========================================================= */
 
 .industry-page {
     padding-bottom: 50px;
@@ -11243,7 +11115,7 @@ label{
     color: var(--green);
 }
 
-
+/* Legacy selectors retained for existing or dormant markup. */
 .industry-eyebrow {
     display: block;
     margin-bottom: 24px;
@@ -11302,26 +11174,13 @@ label{
 }
 
 
-/* =========================================
-   INDUSTRY OVERVIEW
-========================================= */
+/* =========================================================
+   SINGLE INDUSTRY — OVERVIEW
+========================================================= */
 
 .industry-intro {
     padding: 50px 0;
     background: #f5f5f5;
-}
-
-.industry-intro .wrap,
-.industry-requirements .wrap,
-.industry-benefits .wrap , 
-.industry-page .related-products,
-.industry-page .related-applications,
-.industry-page .related-industries{
-    width: calc(100% - 48px);
-    max-width: 1024px;
-    margin-left: auto;
-    margin-right: auto;
-    box-sizing: border-box;
 }
 
 .industry-intro-heading {
@@ -11332,7 +11191,7 @@ label{
     display: block;
     margin-bottom: 12px;
     font-size: 12px;
-    font-weight: 700;
+    font-weight: var(--font-weight-700);
     letter-spacing: 1px;
     color: var(--blue);
 }
@@ -11361,7 +11220,7 @@ label{
     display: block;
     width: 100%;
     color: var(--text-light);
-    font-size: 16px;
+    font-size: var(--font-size-16);
     line-height: 1.9;
 }
 
@@ -11374,9 +11233,9 @@ label{
 }
 
 
-/* =========================================
-   INDUSTRY REQUIREMENTS
-========================================= */
+/* =========================================================
+   SINGLE INDUSTRY — REQUIREMENTS
+========================================================= */
 
 .industry-requirements {
     padding: 50px 0;
@@ -11420,7 +11279,7 @@ label{
     display: block;
     margin-bottom: 12px;
     font-size: 12px;
-    font-weight: 700;
+    font-weight: var(--font-weight-700);
     letter-spacing: 1px;
     color: var(--blue);
 }
@@ -11429,7 +11288,7 @@ label{
     margin: 0;
     color: var(--navy);
     font-size: clamp(25px, 3vw, 34px);
-    font-weight: 700;
+    font-weight: var(--font-weight-700);
     line-height: 1.3;
 }
 
@@ -11439,7 +11298,7 @@ label{
 
 .industry-requirements-text {
     color: var(--text-light);
-    font-size: 16px;
+    font-size: var(--font-size-16);
     line-height: 1.9;
 }
 
@@ -11462,9 +11321,9 @@ label{
 }
 
 
-/* =========================================
-   INDUSTRY BENEFITS
-========================================= */
+/* =========================================================
+   SINGLE INDUSTRY — BENEFITS
+========================================================= */
 
 .industry-benefits {
     padding: 50px 0;
@@ -11530,17 +11389,34 @@ label{
 
 .industry-benefit-card h3 {
     margin: 0 0 12px;
-    font-size: 18px;
-    font-weight: 700;
+    font-size: var(--font-size-18);
+    font-weight: var(--font-weight-700);
     line-height: 1.4;
     color: var(--navy);
 }
 
 .industry-benefit-card p {
     margin: 0;
-    font-size: 14px;
+    font-size: var(--font-size-14);
     line-height: 1.8;
     color: var(--text-light);
+}
+
+/* =========================================================
+   SINGLE INDUSTRY — RELATED SECTIONS LAYOUT
+========================================================= */
+
+.industry-intro .wrap,
+.industry-requirements .wrap,
+.industry-benefits .wrap ,
+.industry-page .related-products,
+.industry-page .related-applications,
+.industry-page .related-industries{
+    width: calc(100% - 48px);
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
 }
 
 /* =========================================
@@ -12329,8 +12205,8 @@ label { font-size:var(--font-size-14); }
 }
 
 /* =========================================================
-   INDUSTRIES PAGE
-   ========================================================= */
+   INDUSTRIES ARCHIVE — WRAPPER & GRID
+========================================================= */
 
 .industries-page {
     display: flow-root;
@@ -12338,11 +12214,7 @@ label { font-size:var(--font-size-14); }
     padding-bottom:50px;
 }
 
-
-
-/* =========================================================
-   INDUSTRY CARDS - IMAGE + 3D TILT
-========================================================= */
+/* Archive grid */
 
 .industries-grid {
     display: grid;
@@ -12351,6 +12223,35 @@ label { font-size:var(--font-size-14); }
     gap: 24px;
     perspective: 1000px;
 }
+
+@media (max-width: 1080px) {
+    .industries-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+    }
+}
+
+@media (max-width: 640px) {
+    .industries-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+    }
+}
+
+/* Archive empty state */
+
+.industries-empty {
+    grid-column: 1 / -1;
+    padding: 50px 20px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    text-align: center;
+    color: var(--muted);
+}
+
+/* =========================================================
+   SHARED INDUSTRY CARD COMPONENTS
+========================================================= */
 
 /* CARD */
 
@@ -12430,7 +12331,7 @@ label { font-size:var(--font-size-14); }
     margin: 0 0 12px;
     color: var(--navy);
     font-size: 21px;
-    font-weight: 600;
+    font-weight: var(--font-weight-600);
     line-height: 1.3;
     letter-spacing: -.02em;
 }
@@ -12440,7 +12341,7 @@ label { font-size:var(--font-size-14); }
 .industry-card p {
     margin: 0 0 12px;
     color: var(--muted);
-    font-size: 14px;
+    font-size: var(--font-size-14);
     line-height: 1.7;
 }
 
@@ -12457,8 +12358,8 @@ label { font-size:var(--font-size-14); }
     align-items: center;
     gap: 10px;
     color: var(--blue);
-    font-size: 14px;
-    font-weight: 600;
+    font-size: var(--font-size-14);
+    font-weight: var(--font-weight-600);
 }
 
 .industry-card-arrow {
@@ -12480,21 +12381,7 @@ label { font-size:var(--font-size-14); }
 
 /* RESPONSIVE */
 
-@media (max-width: 1080px) {
-    .industries-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 24px;
-    }
-}
-
 @media (max-width: 640px) {
-    .industries-grid {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 20px;
-    }
-
-
-
     .industry-card-image {
         height: 200px;
     }
@@ -13253,24 +13140,12 @@ body.tax-product_cat .about-hero .scroll-indicator {
 
 
 
+/* Shared industry-card late arrow override */
 .industry-card-arrow {
     font-size: 15px;
     line-height: 1;
 }
 
-
-/* =========================================================
-   EMPTY
-   ========================================================= */
-
-.industries-empty {
-    grid-column: 1 / -1;
-    padding: 50px 20px;
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    text-align: center;
-    color: var(--muted);
-}
 
 /* =========================================================
    8. CONTENT AND MEDIA
@@ -15790,7 +15665,7 @@ body.company-video-lightbox-open {
 
 
     
-    /* Industries Page  */
+    /* Industries archive grid — late two-column override */
 
     .industries-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -16008,6 +15883,8 @@ body.company-video-lightbox-open {
         font-size: 32px;
     }
 
+    /* Single Industry — late responsive overrides */
+
     .industry-intro {
         padding: 50px 0;
     }
@@ -16023,9 +15900,7 @@ body.company-video-lightbox-open {
 
 
     
-    /* Industries Page */
-
-
+    /* Industries archive grid — late gap override */
 
     .industries-grid {
         gap: 18px;
@@ -16318,7 +16193,7 @@ body.company-video-lightbox-open {
     }
 
     
-    /* Industries Page */
+    /* Industries archive grid — late two-column override */
 
     .industries-grid {
         grid-template-columns: 1fr 1fr;
@@ -16551,11 +16426,12 @@ body.company-video-lightbox-open {
         flex-basis:38px;
     }
 
-    /* Related sections */
+    /* Shared related-section responsive overrides */
     .related-products .section-head { flex-direction:column; gap:16px; }
 
     .related-industries-grid { grid-template-columns:1fr; }
 
+    /* Shared industry-card image override */
     .industry-card-image { height:190px; }
 
     
@@ -16571,9 +16447,7 @@ body.company-video-lightbox-open {
     
 
    
-    /* Industries Page */
-
-
+    /* Industries archive grid — final one-column override */
 
     .industries-grid {
         grid-template-columns: 1fr;
