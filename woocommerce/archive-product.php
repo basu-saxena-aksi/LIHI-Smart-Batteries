@@ -70,8 +70,12 @@ get_template_part('components/parallax-hero', null, [
                 <?php echo do_shortcode('[fe_widget]'); ?>
 
                 <div class="archive-clear-filters">
-                    <a href="<?php echo esc_url($reset_url); ?>" class="btn btn-outline">
-                        Clear All Filters
+                    <a href="<?php echo esc_url($reset_url); ?>" class="link-btn">
+                        <span>Clear All Filters</span>
+                        <svg width="15" height="10" viewBox="0 0 13 10" aria-hidden="true">
+                            <path d="M1,5 L11,5"></path>
+                            <polyline points="8 1 12 5 8 9"></polyline>
+                        </svg>
                     </a>
                 </div>
 
@@ -187,8 +191,12 @@ get_template_part('components/parallax-hero', null, [
                             Try changing or clearing your filters.
                         </p>
 
-                        <a href="<?php echo esc_url($reset_url); ?>" class="archive-reset-link">
-                            Clear Filters
+                        <a href="<?php echo esc_url($reset_url); ?>" class="link-btn">
+                            <span>Clear Filters</span>
+                            <svg width="15" height="10" viewBox="0 0 13 10" aria-hidden="true">
+                                <path d="M1,5 L11,5"></path>
+                                <polyline points="8 1 12 5 8 9"></polyline>
+                            </svg>
                         </a>
 
                     </div>

@@ -1070,3 +1070,5 @@ function lihi_industry_card_assets()
 
 }
 add_action('wp_enqueue_scripts', 'lihi_industry_card_assets');
+
+require_once get_template_directory() . '/inc/custom-battery-request.php';

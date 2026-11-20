@@ -22,7 +22,7 @@
                 </span>
             </div>
         </div>
-        <a href="<?php echo esc_url(home_url('/contact-us/')); ?>" class="link-btn">
+        <a href="<?php echo esc_url(home_url('/custom-battery-request/')); ?>" class="link-btn">
             <span>Customise Now</span>
             <svg width="15" height="10" viewBox="0 0 13 10" aria-hidden="true">
                 <path d="M1,5 L11,5"></path>
