@@ -10443,9 +10443,9 @@ label{
 ========================================================= */
 
 
-/* =========================================
-   PAGE & HERO LAYOUT
-========================================= */
+/* =========================================================
+   SINGLE PRODUCT — HERO LAYOUT
+========================================================= */
 
 .lp-page {
     width: 100%;
@@ -10476,9 +10476,10 @@ label{
 
 
 
-/* =========================================
-   LEFT PRODUCT GALLERY
-========================================= */
+/* =========================================================
+   SINGLE PRODUCT — GALLERY & LIGHTBOX
+   Gallery frame and media
+========================================================= */
 
 .lp-sticky-media {
     position: sticky;
@@ -10503,9 +10504,7 @@ label{
 }
 
 
-/* =========================================
-   MAIN FEATURED MEDIA
-========================================= */
+/* ---------- Main featured media ---------- */
 
 .lp-gallery-main {
     position: relative;
@@ -10535,127 +10534,7 @@ label{
     overflow: hidden;
 }
 
-
-/* =========================================
-   3D MODEL
-========================================= */
-
-.lp-model-viewer {
-    display: block;
-
-    width: 100%;
-    height: 100%;
-
-    background: #fff;
-
-    --poster-color: #fff;
-}
-
-.lp-model-error {
-    padding: 18px;
-
-    color: var(--text-light);
-    font-size: 14px;
-    text-align: center;
-}
-
-
-/* =========================================
-   3D MODEL FULLSCREEN
-========================================= */
-
-.lp-image-box:fullscreen {
-    position: relative;
-
-    display: block;
-
-    width: 100vw;
-    height: 100vh;
-
-    margin: 0;
-    padding: 0;
-
-    background: #fff;
-    border: none;
-    border-radius: 0;
-    overflow: hidden;
-}
-
-.lp-image-box:fullscreen::backdrop {
-    background: #fff;
-}
-
-.lp-image-box:fullscreen .lp-model-viewer {
-    display: block;
-
-    width: 100%;
-    height: 100%;
-
-    max-width: none;
-    max-height: none;
-
-    margin: 0;
-    padding: 0;
-
-    background: #fff;
-    border: none;
-    border-radius: 0;
-}
-
-
-/* =========================================
-   FULLSCREEN CLOSE BUTTON
-========================================= */
-
-.lp-model-fullscreen-close {
-    display: none;
-}
-
-.lp-image-box:fullscreen .lp-model-fullscreen-close {
-    position: absolute;
-    top: 24px;
-    right: 24px;
-
-    z-index: 999999;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 44px;
-    height: 44px;
-
-    padding: 0;
-
-    background: rgba(15, 25, 45, 0.08);
-    border: 1px solid rgba(15, 25, 45, 0.15);
-    border-radius: 50%;
-
-    color: #14213d;
-
-    cursor: pointer;
-
-    transition:
-        background 0.25s ease,
-        color 0.25s ease,
-        transform 0.25s ease;
-}
-
-.lp-image-box:fullscreen .lp-model-fullscreen-close:hover {
-    background: #14213d;
-    color: #fff;
-    transform: rotate(90deg);
-}
-
-.lp-model-fullscreen-close svg {
-    width: 21px;
-    height: 21px;
-}
-
-
-/* =========================================
-   FEATURED PRODUCT IMAGE
-========================================= */
+/* ---------- Featured product image ---------- */
 
 .lp-image-link {
     display: flex;
@@ -10685,97 +10564,7 @@ label{
     text-align: center;
 }
 
-
-/* =========================================
-   3D MODEL TOOLBAR
-========================================= */
-
-.lp-model-toolbar {
-    position: absolute;
-
-    left: 14px;
-    right: 14px;
-    bottom: 14px;
-
-    z-index: 2;
-
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-
-    padding: 11px 14px;
-
-    background: rgba(255, 255, 255, 0.9);
-    border: 1px solid rgba(226, 234, 247, 0.9);
-    border-radius: 8px;
-
-    backdrop-filter: blur(8px);
-
-    font-size: 12px;
-    color: var(--text-light);
-}
-
-.lp-model-toolbar span,
-.lp-model-toolbar a {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-}
-
-.lp-model-toolbar a {
-    color: var(--blue);
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.lp-model-toolbar svg {
-    width: 15px;
-    height: 15px;
-}
-
-.lp-model-fullscreen-toggle {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 7px;
-
-    padding: 0;
-
-    border: none;
-    outline: none;
-    background: transparent;
-
-    color: var(--blue);
-
-    font-family: inherit;
-    font-size: 13px;
-    font-weight: 600;
-
-    cursor: pointer;
-    transition: color 0.25s ease;
-}
-
-.lp-model-fullscreen-toggle:hover {
-    color: var(--navy);
-}
-
-.lp-model-fullscreen-toggle svg {
-    width: 15px;
-    height: 15px;
-
-    transition: transform 0.25s ease;
-}
-
-.lp-model-fullscreen-toggle:hover svg {
-    transform: scale(1.1);
-}
-
-
-/* =========================================
-   TWO ADDITIONAL GALLERY IMAGES
-========================================= */
+/* ---------- Additional gallery images ---------- */
 
 .lp-gallery-bottom {
     display: grid;
@@ -10834,220 +10623,7 @@ label{
     visibility: visible !important;
 }
 
-
-/* =========================================
-   RIGHT PRODUCT INFORMATION
-========================================= */
-
-.lp-eyebrow {
-    display: block;
-
-    margin-bottom: 12px;
-
-    color: var(--blue);
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 1.2px;
-}
-
-.lp-title {
-    margin: 0 0 18px;
-
-    color: var(--navy);
-    font-size: clamp(30px, 3vw, 42px);
-    font-weight: 800;
-    line-height: 1.2;
-}
-
-.lp-short-description {
-    max-width: 530px;
-
-    margin-bottom: 18px;
-
-    color: var(--text-light);
-    font-size: 15px;
-    line-height: 1.8;
-}
-
-.lp-short-description p {
-    margin: 0 0 12px;
-}
-
-
-/* =========================================
-   QUICK SPECIFICATIONS
-========================================= */
-
-.lp-hero-specs {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 10px;
-
-    margin: 0 0 26px;
-}
-
-.lp-hero-spec {
-    min-width: 0;
-
-    padding: 15px;
-
-    background: #fff;
-    border: 1px solid #e2eaf7;
-    border-radius: 10px;
-}
-
-.lp-hero-spec span {
-    display: block;
-
-    margin-bottom: 7px;
-
-    color: var(--text-light);
-    font-size: 11px;
-    font-weight: 600;
-}
-
-.lp-hero-spec strong {
-    display: block;
-
-    color: var(--navy);
-    font-size: 14px;
-
-    overflow-wrap: anywhere;
-}
-
-
-/* =========================================
-   PRODUCT ACTIONS
-========================================= */
-
-.lp-actions {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 12px;
-
-    margin-bottom: 34px;
-}
-
-.lp-actions .btn {
-    gap: 9px;
-}
-
-.lp-actions .btn svg {
-    width: 17px;
-    height: 17px;
-}
-
-/* Prevent global button icon rotation */
-
-.btn.lp-btn svg,
-.btn.lp-btn:hover svg {
-    transform: none;
-}
-
-
-/* =========================================
-   TECHNICAL SPECIFICATIONS / DESCRIPTION
-========================================= */
-
-.lp-detail-section {
-    padding: 30px 0;
-    border-top: 1px solid #e2eaf7;
-}
-
-.lp-detail-section h2 {
-    margin: 0 0 22px;
-
-    color: var(--navy);
-    font-size: 23px;
-    font-weight: 700;
-    line-height: 1.3;
-}
-
-.lp-description-content,
-.lp-specification-content {
-    color: var(--text);
-    font-size: 15px;
-    line-height: 1.8;
-}
-
-
-/* =========================================
-   TECHNICAL SPECIFICATION TABLE
-========================================= */
-
-.lp-specification-content {
-    overflow-x: auto;
-}
-
-.lp-specification-content table {
-    width: 100%;
-
-    border-collapse: collapse;
-    table-layout: fixed;
-
-    font-size: 14px;
-}
-
-.lp-specification-content th,
-.lp-specification-content td {
-    padding: 13px 15px;
-
-    border: 1px solid #e0e7f1;
-
-    text-align: left;
-    vertical-align: top;
-
-    overflow-wrap: anywhere;
-}
-
-.lp-specification-content tr > :first-child {
-    width: 42%;
-
-    background: #f3f7ff;
-
-    color: var(--navy);
-    font-weight: 600;
-}
-
-.lp-specification-content tr:nth-child(even) td:not(:first-child) {
-    background: #fbfcff;
-}
-
-
-/* =========================================
-   LEGACY SPECIFICATIONS
-========================================= */
-
-.lp-specs-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0;
-}
-
-.lp-spec-row {
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
-
-    padding: 14px 0;
-
-    border-bottom: 1px solid var(--line);
-}
-
-.lp-spec-row span {
-    color: var(--text-light);
-}
-
-.lp-spec-row strong {
-    color: var(--navy);
-    text-align: right;
-}
-
-
-/* =========================================
-   IMAGE LIGHTBOX
-========================================= */
+/* ---------- Gallery lightbox ---------- */
 
 .lp-lightbox[hidden] {
     display: none;
@@ -11111,9 +10687,409 @@ label{
 }
 
 
-/* =========================================
-   RESPONSIVE
-========================================= */
+/* =========================================================
+   SINGLE PRODUCT — MODEL VIEWER & TOOLBAR
+========================================================= */
+
+.lp-model-viewer {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    background: #fff;
+
+    --poster-color: #fff;
+}
+
+.lp-model-error {
+    padding: 18px;
+
+    color: var(--text-light);
+    font-size: var(--font-size-14);
+    text-align: center;
+}
+
+
+/* ---------- Fullscreen model viewer ---------- */
+
+.lp-image-box:fullscreen {
+    position: relative;
+
+    display: block;
+
+    width: 100vw;
+    height: 100vh;
+
+    margin: 0;
+    padding: 0;
+
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    overflow: hidden;
+}
+
+.lp-image-box:fullscreen::backdrop {
+    background: #fff;
+}
+
+.lp-image-box:fullscreen .lp-model-viewer {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    max-width: none;
+    max-height: none;
+
+    margin: 0;
+    padding: 0;
+
+    background: #fff;
+    border: none;
+    border-radius: 0;
+}
+
+
+/* ---------- Fullscreen close control ---------- */
+
+.lp-model-fullscreen-close {
+    display: none;
+}
+
+.lp-image-box:fullscreen .lp-model-fullscreen-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+
+    z-index: 999999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+
+    padding: 0;
+
+    background: rgba(15, 25, 45, 0.08);
+    border: 1px solid rgba(15, 25, 45, 0.15);
+    border-radius: 50%;
+
+    color: #14213d;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.lp-image-box:fullscreen .lp-model-fullscreen-close:hover {
+    background: #14213d;
+    color: #fff;
+    transform: rotate(90deg);
+}
+
+.lp-model-fullscreen-close svg {
+    width: 21px;
+    height: 21px;
+}
+
+
+/* ---------- Model toolbar ---------- */
+
+.lp-model-toolbar {
+    position: absolute;
+
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+
+    z-index: 2;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    padding: 11px 14px;
+
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(226, 234, 247, 0.9);
+    border-radius: 8px;
+
+    backdrop-filter: blur(8px);
+
+    font-size: 12px;
+    color: var(--text-light);
+}
+
+.lp-model-toolbar span,
+.lp-model-toolbar a {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.lp-model-toolbar a {
+    color: var(--blue);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.lp-model-toolbar svg {
+    width: 15px;
+    height: 15px;
+}
+
+.lp-model-fullscreen-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    padding: 0;
+
+    border: none;
+    outline: none;
+    background: transparent;
+
+    color: var(--blue);
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: var(--font-weight-600);
+
+    cursor: pointer;
+    transition: color 0.25s ease;
+}
+
+.lp-model-fullscreen-toggle:hover {
+    color: var(--navy);
+}
+
+.lp-model-fullscreen-toggle svg {
+    width: 15px;
+    height: 15px;
+
+    transition: transform 0.25s ease;
+}
+
+.lp-model-fullscreen-toggle:hover svg {
+    transform: scale(1.1);
+}
+
+
+/* =========================================================
+   SINGLE PRODUCT — PRODUCT INFORMATION
+========================================================= */
+
+.lp-eyebrow {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: var(--blue);
+    font-size: 12px;
+    font-weight: var(--font-weight-700);
+    letter-spacing: 1.2px;
+}
+
+.lp-title {
+    margin: 0 0 18px;
+
+    color: var(--navy);
+    font-size: clamp(30px, 3vw, 42px);
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.lp-short-description {
+    max-width: 530px;
+
+    margin-bottom: 18px;
+
+    color: var(--text-light);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.lp-short-description p {
+    margin: 0 0 12px;
+}
+
+/* ---------- Product actions ---------- */
+
+.lp-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 34px;
+}
+
+.lp-actions .btn {
+    gap: 9px;
+}
+
+.lp-actions .btn svg {
+    width: 17px;
+    height: 17px;
+}
+
+/* Prevent global button icon rotation */
+
+.btn.lp-btn svg,
+.btn.lp-btn:hover svg {
+    transform: none;
+}
+
+
+/* =========================================================
+   SINGLE PRODUCT — SPECS & KEY DETAILS
+========================================================= */
+
+.lp-hero-specs {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+
+    margin: 0 0 26px;
+}
+
+.lp-hero-spec {
+    min-width: 0;
+
+    padding: 15px;
+
+    background: #fff;
+    border: 1px solid #e2eaf7;
+    border-radius: 10px;
+}
+
+.lp-hero-spec span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: var(--text-light);
+    font-size: 11px;
+    font-weight: var(--font-weight-600);
+}
+
+.lp-hero-spec strong {
+    display: block;
+
+    color: var(--navy);
+    font-size: var(--font-size-14);
+
+    overflow-wrap: anywhere;
+}
+
+/* ---------- Legacy key specifications ---------- */
+
+.lp-specs-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+}
+
+.lp-spec-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+
+    padding: 14px 0;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.lp-spec-row span {
+    color: var(--text-light);
+}
+
+.lp-spec-row strong {
+    color: var(--navy);
+    text-align: right;
+}
+
+
+/* =========================================================
+   SINGLE PRODUCT — DESCRIPTION & TECHNICAL DETAILS
+========================================================= */
+
+.lp-detail-section {
+    padding: 30px 0;
+    border-top: 1px solid #e2eaf7;
+}
+
+.lp-detail-section h2 {
+    margin: 0 0 22px;
+
+    color: var(--navy);
+    font-size: 23px;
+    font-weight: var(--font-weight-700);
+    line-height: 1.3;
+}
+
+.lp-description-content,
+.lp-specification-content {
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+/* ---------- Technical specification table ---------- */
+
+.lp-specification-content {
+    overflow-x: auto;
+}
+
+.lp-specification-content table {
+    width: 100%;
+
+    border-collapse: collapse;
+    table-layout: fixed;
+
+    font-size: var(--font-size-14);
+}
+
+.lp-specification-content th,
+.lp-specification-content td {
+    padding: 13px 15px;
+
+    border: 1px solid #e0e7f1;
+
+    text-align: left;
+    vertical-align: top;
+
+    overflow-wrap: anywhere;
+}
+
+.lp-specification-content tr > :first-child {
+    width: 42%;
+
+    background: #f3f7ff;
+
+    color: var(--navy);
+    font-weight: 600;
+}
+
+.lp-specification-content tr:nth-child(even) td:not(:first-child) {
+    background: #fbfcff;
+}
+
+
+/* =========================================================
+   SINGLE PRODUCT — RESPONSIVE OVERRIDES
+========================================================= */
 
 @media (max-width: 1024px) {
 
@@ -11141,9 +11117,7 @@ label{
 }
 
 
-/* =========================================
-   MOBILE / TABLET
-========================================= */
+/* ---------- Tablet and mobile ---------- */
 
 @media (max-width: 768px) {
 
@@ -11191,9 +11165,7 @@ label{
 }
 
 
-/* =========================================
-   SMALL MOBILE
-========================================= */
+/* ---------- Small mobile ---------- */
 
 @media (max-width: 480px) {
 
