@@ -9396,7 +9396,7 @@ label{
 
 
 /* =========================================================
-   CONTACT FORM SECTION
+   CONTACT US — CONTACT DETAILS
 ========================================================= */
 .contact-hero{
     padding: 50px 0;
@@ -9432,8 +9432,8 @@ label{
     display: inline-block;
     margin-bottom: 30px;
 
-    font-size: 24px;
-    font-weight: 700;
+    font-size: var(--font-size-24);
+    font-weight: var(--font-weight-700);
     color: rgba(11, 30, 77, 1);
 
     border-bottom: 1px solid rgba(11, 30, 77, 1);
@@ -9495,18 +9495,18 @@ label{
     margin: 0 0 5px;
 
     color: #65718A;
-    font-size: 14px;
+    font-size: var(--font-size-14);
     line-height: 1.3;
-    font-weight: 600;
+    font-weight: var(--font-weight-600);
 }
 
 .contact-info-content a {
     display: inline-block;
     color: #0B1E4D;
 
-    font-size: 16px;
+    font-size: var(--font-size-16);
     line-height: 1.45;
-    font-weight: 600;
+    font-weight: var(--font-weight-600);
 
     text-decoration: none;
     overflow-wrap: anywhere;
@@ -9530,8 +9530,8 @@ label{
 .contact-info-info-heading {
     margin: 0;
     color: #0B1E4D;
-    font-size: 16px;
-    font-weight: 600;
+    font-size: var(--font-size-16);
+    font-weight: var(--font-weight-600);
 }
 
 /* Vertical divider */
@@ -9586,7 +9586,7 @@ label{
     }
 
     .contact-info-info-heading {
-        font-size: 14px;
+        font-size: var(--font-size-14);
     }
 
     .contact-info-info-socials .socials {
@@ -9617,7 +9617,7 @@ label{
     }
 
     .contact-info-content h3 {
-        font-size: 16px;
+        font-size: var(--font-size-16);
     }
 
     .contact-info-content a {
@@ -9657,7 +9657,7 @@ label{
     }
 
     .contact-info-content h3 {
-        font-size: 14px;
+        font-size: var(--font-size-14);
     }
 
     .contact-info-content a {
@@ -9678,12 +9678,14 @@ label{
     }
 
     .contact-info-content a {
-        font-size: 14px;
+        font-size: var(--font-size-14);
     }
 }
 
 
-/* RIGHT FORM */
+/* =========================================================
+   CONTACT US — MESSAGE FORM
+========================================================= */
 
 .contact-form-wrap {
     height: 100%;
@@ -9852,7 +9854,7 @@ label{
 
 
 /* =========================================================
-   CONTACT MAP
+   CONTACT US — OFFICE MAP
 ========================================================= */
 
 .contact-map-section {
