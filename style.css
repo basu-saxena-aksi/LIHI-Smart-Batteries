@@ -6,8 +6,25 @@ Description: Custom LiHi Smart Batteries WordPress Theme
 Version: 1.0
 */
 
+/* =========================================================
+   STYLESHEET ORGANIZATION
+   Rules remain in their original cascade order where moving
+   them could change behavior; some categories recur below.
+========================================================= */
+
+/* 1. GLOBAL FOUNDATION */
+/* 2. SHARED COMPONENTS */
+/* 3. SITE HEADER AND NAVIGATION */
+/* 4. HOMEPAGE */
+/* 5. PRODUCT ARCHIVE */
+/* 6. SINGLE PRODUCT */
+/* 7. STATIC PAGES */
+/* 8. CONTENT AND MEDIA */
+/* 9. FOOTER */
+/* 10. RESPONSIVE AND COMPATIBILITY OVERRIDES */
 
 /* =========================================================
+   1. GLOBAL FOUNDATION
    ROOT VARIABLES
    Main LiHi design system
 ========================================================= */
@@ -263,6 +280,8 @@ ul {
 }
 
 /* From Uiverse.io by alexmaracinaru */ 
+
+/* 2. SHARED COMPONENTS */
 
 /* =========================================================
    ANIMATED LINK BUTTON
@@ -824,6 +843,7 @@ html.is-transition-entering.is-transition-ready
 
 
 /* =========================================================
+   3. SITE HEADER AND NAVIGATION
    HEADER
 ========================================================= */
 
@@ -1731,6 +1751,7 @@ header {
 }
 
 /* =========================================================
+   4. HOMEPAGE
    HOME PAGE
    HERO Top
 ========================================================= */
@@ -4385,6 +4406,7 @@ header {
 }
 
 /* =========================================================
+   7. STATIC PAGES — ABOUT US / RESEARCH & DEVELOPMENT
    ABOUT US — CINEMATIC PARALLAX HERO
 ========================================================= */
 
@@ -8434,6 +8456,7 @@ header {
 
 
 /* =========================================================
+   9. FOOTER
    FOOTER
 ========================================================= */
 
@@ -8721,6 +8744,7 @@ footer button:focus-visible {
 }
 
 /* =========================================================
+   9. FOOTER — CONTINUED
    ABOUT FOOTER SUPPORT
 ========================================================= */
 
@@ -8808,6 +8832,7 @@ footer ul li {
 }
 
 /* =========================================================
+   7. STATIC PAGES — FAQ AND CONTACT
    FAQ SECTION
 ========================================================= */
 
@@ -10037,6 +10062,7 @@ label{
 
 
 /* =========================================================
+   2. SHARED COMPONENTS — RELATED CAROUSELS
    RELATED PRODUCTS CAROUSEL
 ========================================================= */
 
@@ -10333,6 +10359,7 @@ label{
 }
 
 /* =========================================================
+   6. SINGLE PRODUCT
    LIHI SINGLE PRODUCT
    STICKY PRODUCT GALLERY / SCROLLING DETAILS
 ========================================================= */
@@ -11151,6 +11178,7 @@ label{
 
 
 /* =========================================
+   7. STATIC PAGES — INDUSTRIES AND APPLICATIONS
    SINGLE INDUSTRY PAGE
 ========================================= */
 
@@ -11897,6 +11925,11 @@ label{
 
 
 /* =========================================================
+   Responsive foundation block — retained in its original
+   position because later rules override its declarations.
+========================================================= */
+
+/* =========================================================
    RESPONSIVE FOUNDATION
    Fluid type, fluid spacing, forms, mobile nav toggle.
    Sits after the base styles so it wins on equal specificity,
@@ -12453,6 +12486,8 @@ body.tax-product_cat .about-hero .scroll-indicator {
     display: none !important;
 }
 /* =========================================================
+   5. PRODUCT ARCHIVE
+   Kept after product/detail-page rules to preserve source order.
    LIHI PRODUCT ARCHIVE
 ========================================================= */
 
@@ -13189,6 +13224,7 @@ body.tax-product_cat .about-hero .scroll-indicator {
 }
 
 /* =========================================================
+   8. CONTENT AND MEDIA
    MEDIA PAGE
    ========================================================= */
 
@@ -15429,6 +15465,11 @@ body.company-video-lightbox-open {
     
     transform: translateY(-3px);
 }
+
+/* =========================================================
+   10. RESPONSIVE AND COMPATIBILITY OVERRIDES
+   End-of-file overrides remain in their original relative order.
+========================================================= */
 
 @media (max-width:1680px){
     .nav , .wrap , .about  {
