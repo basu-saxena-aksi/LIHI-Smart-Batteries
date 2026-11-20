@@ -8784,7 +8784,7 @@ footer ul li {
 
 /* =========================================================
    7. STATIC PAGES — FAQ AND CONTACT
-   FAQ SECTION
+   FAQ PAGE — CATEGORY TABS & ACCORDION
 ========================================================= */
 
 .faq-page-section {
@@ -8818,7 +8818,7 @@ footer ul li {
     background: transparent;
     color: var(--muted);
     font: inherit;
-    font-size: 16px;
+    font-size: var(--font-size-16);
     cursor: pointer;
     transition: color .3s ease;
 }
@@ -8956,9 +8956,9 @@ footer ul li {
     text-align: left;
 
     font-family: inherit;
-    font-size: 18px;
+    font-size: var(--font-size-18);
     line-height: 1.5;
-    font-weight: 600;
+    font-weight: var(--font-weight-600);
     color: var(--navy);
 
     transition: color 0.3s ease;
@@ -9005,7 +9005,7 @@ footer ul li {
     margin: 0;
     padding: 0 42px 22px 12px;
     color: var(--muted);
-    font-size: 16px;
+    font-size: var(--font-size-16);
     line-height: 1.7;
 }
 
@@ -9064,7 +9064,7 @@ footer ul li {
 
     .faq-answer-inner p {
         padding: 0 28px 18px 5px;
-        font-size: 14px;
+        font-size: var(--font-size-14);
     }
 }
 
@@ -9079,7 +9079,7 @@ footer ul li {
 }
 
 /* =====================================================
-   FAQ — CONTACT FORM SECTION
+   FAQ PAGE — CONTACT FORM
 ===================================================== */
 
 .faq-contact-section {
@@ -9104,7 +9104,7 @@ footer ul li {
     background: #f3efe8;
     color: var(--text);
     font-size: 12px;
-    font-weight: 500;
+    font-weight: var(--font-weight-500);
     margin-bottom: 20px;
 }
 
@@ -9112,7 +9112,7 @@ footer ul li {
     margin: 0 0 14px;
     font-size: clamp(32px, 4vw, 46px);
     line-height: 1.15;
-    font-weight: 500;
+    font-weight: var(--font-weight-500);
     letter-spacing: -1.5px;
     color: var(--text);
 }
@@ -9121,7 +9121,7 @@ footer ul li {
     max-width: 430px;
     margin: 0 auto;
     color: var(--muted);
-    font-size: 14px;
+    font-size: var(--font-size-14);
     line-height: 1.7;
 }
 
@@ -9152,8 +9152,8 @@ footer ul li {
 
 .faq-form-field label {
     color: var(--text);
-    font-size: 14px;
-    font-weight: 500;
+    font-size: var(--font-size-14);
+    font-weight: var(--font-weight-500);
 }
 
 .faq-form-field input,
@@ -9165,7 +9165,7 @@ footer ul li {
     background: #fff;
     color: var(--text);
     font-family: inherit;
-    font-size: 14px;
+    font-size: var(--font-size-14);
     outline: none;
     transition: border-color .25s ease, box-shadow .25s ease;
 }
@@ -9230,7 +9230,7 @@ footer ul li {
     color: #fff;
     font-family: inherit;
     font-size: 13px;
-    font-weight: 500;
+    font-weight: var(--font-weight-500);
     cursor: pointer;
     transition: background .3s ease, transform .3s ease;
 }
