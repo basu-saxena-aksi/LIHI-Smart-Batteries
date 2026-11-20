@@ -4832,7 +4832,6 @@ header {
 }
 
 
-
 .about-intro-section .wrap {
     position: relative;
     z-index: 1;
@@ -4852,7 +4851,7 @@ header {
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    margin-bottom: 24px;
+    
     color: var(--blue);
     font-size: 12px;
     font-weight: 700;
@@ -4913,7 +4912,7 @@ header {
 
 .about-engineering-heading h3 {
     max-width: 650px;
-    margin: 0;
+    margin-top: 25px;
     color: var(--navy);
     font-size: var(--font-size-32);
     line-height: 1.18;
@@ -13805,7 +13804,7 @@ body.tax-product_cat .about-hero .scroll-indicator {
 
 
 /* =========================================================
-   COMPANY IMAGE GALLERY
+   COMPANY IMAGE GALLERY — GRID AND TILES
 ========================================================= */
 
 .company-gallery-section {
@@ -13902,7 +13901,7 @@ body.tax-product_cat .about-hero .scroll-indicator {
     height: 40px;
 
     color: #fff;
-    font-size: 20px;
+    font-size: var(--font-size-20);
 
     border: 1px solid rgba(255, 255, 255, .7);
     border-radius: 50%;
@@ -13971,7 +13970,7 @@ body.tax-product_cat .about-hero .scroll-indicator {
 }
 
 /* =========================================================
-   COMPANY GALLERY LIGHTBOX
+   COMPANY IMAGE GALLERY — LIGHTBOX
 ========================================================= */
 
 .gallery-lightbox {
@@ -14065,7 +14064,7 @@ body.tax-product_cat .about-hero .scroll-indicator {
     background: rgba(255, 255, 255, 0.1);
     color: #fff;
 
-    font-size: 32px;
+    font-size: var(--font-size-32);
     line-height: 1;
 
     cursor: pointer;
@@ -14100,7 +14099,7 @@ body.tax-product_cat .about-hero .scroll-indicator {
     background: rgba(255, 255, 255, 0.1);
     color: #fff;
 
-    font-size: 18px;
+    font-size: var(--font-size-18);
 
     cursor: pointer;
 
@@ -14192,7 +14191,7 @@ body.gallery-lightbox-open {
 }
 
 /* =========================================================
-   COMPANY VIDEO GALLERY
+   COMPANY VIDEO GALLERY — SECTION AND GRID
 ========================================================= */
 
 .company-video-gallery-section {
@@ -14209,7 +14208,7 @@ body.gallery-lightbox-open {
     margin-bottom: 14px;
     color: var(--blue);
     font-size: 13px;
-    font-weight: 700;
+    font-weight: var(--font-weight-700);
     letter-spacing: .14em;
 }
 
@@ -14218,7 +14217,7 @@ body.gallery-lightbox-open {
     color: var(--navy);
     font-size: clamp(32px, 3.5vw, 48px);
     line-height: 1.1;
-    font-weight: 700;
+    font-weight: var(--font-weight-700);
     letter-spacing: -.04em;
 }
 
@@ -14304,7 +14303,7 @@ body.gallery-lightbox-open {
 }
 
 /* =========================================================
-   VIDEO GALLERY - EXPAND BUTTON
+   COMPANY VIDEO GALLERY — VIDEO CONTROLS AND LIGHTBOX
 ========================================================= */
 
 .company-video-wrapper {
@@ -14439,7 +14438,7 @@ body.gallery-lightbox-open {
     background: rgba(255, 255, 255, 0.1);
     color: #fff;
 
-    font-size: 32px;
+    font-size: var(--font-size-32);
     line-height: 1;
 
     cursor: pointer;
@@ -14474,7 +14473,7 @@ body.gallery-lightbox-open {
     background: rgba(255, 255, 255, 0.1);
     color: #fff;
 
-    font-size: 18px;
+    font-size: var(--font-size-18);
 
     cursor: pointer;
 
