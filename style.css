@@ -4797,6 +4797,11 @@ header {
 
 
 /* =========================================================
+   ABOUT US / R&D SHARED SECTION STYLES
+   These section rules are used by both page templates.
+========================================================= */
+
+/* =========================================================
    ABOUT INTRO SECTION
 ========================================================= */
 
@@ -5192,352 +5197,407 @@ header {
 
 
 /* =========================================================
-   MISSION, VISION & VALUES
+   ABOUT - OUR STORY & JOURNEY
 ========================================================= */
 
-.mvv-section {
-    position: relative;
-    padding: 50px 0;
-}
+.story {
+    padding: 50px 0 ;
 
-.mvv-layout {
-    display: grid;
-    grid-template-columns: 2fr 3fr;
-    gap: 55px;
-    align-items: start;
-}
-
-
-/* =========================================================
-   LEFT STICKY SIDE
-========================================================= */
-
-.mvv-left {
-    position: sticky;
-    top: 35vh;
-    align-self: start;
-    padding-bottom: 30px;
-}
-
-.mvv-eyebrow {
-    display: block;
-    margin-bottom: 22px;
-
-    color: var(--blue);
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: .14em;
-}
-
-.mvv-heading {
-    max-width: 450px;
-    margin: 0;
-
-    color: var(--navy);
-    font-size: var(--font-size-64);
-    font-weight: var(--font-weight-700);
-    line-height: 1.05;
-    letter-spacing: -.045em;
-    text-transform: uppercase;
-}
-
-.mvv-heading span {
-    display: block;
-    color: var(--blue);
-    transition: opacity .3s ease, transform .3s ease;
-}
-
-/* Progress line */
-
-.mvv-progress {
-    position: relative;
-    width: 100px;
-    height: 3px;
-    margin-top: 35px;
     overflow: hidden;
-    background: #dce3ef;
 }
 
-.mvv-progress-fill {
-    position: absolute;
-    inset: 0;
-    background: var(--blue);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform .5s ease;
-}
-
-
-/* =========================================================
-   RIGHT SCROLLING SIDE
-========================================================= */
-
-.mvv-right {
-    --mvv-item-h: 55vh;   /* card height, shared by items and rail */
-    --mvv-dot: 58px;      /* indicator size */
-
+.story .wrap {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
 }
 
-.mvv-item {
-    min-height: var(--mvv-item-h);
-    display: flex;
+
+/* INTRO */
+
+.story-intro-grid {
+    display: grid;
+    grid-template-columns: 1fr .85fr;
+    gap: 90px;
     align-items: center;
-    opacity: .4;
-    transition: opacity .4s ease;
 }
 
-.mvv-item.is-active {
-    opacity: 1;
+.story-title-block h2 {
+    margin: 0 0 22px;
+    color: var(--navy);
+    font-size: var(--font-size-48);
+    line-height: 1.12;
+    letter-spacing: -2px;
+    font-weight: var(--font-weight-600);
 }
 
-
-/* =========================================================
-   MOVING NUMBER INDICATOR
-========================================================= */
-
-/* Rail runs from the centre of the first card
-   to the centre of the last card */
-.mvv-number-rail {
-    position: absolute;
-    top: calc(var(--mvv-item-h) / 2 - var(--mvv-dot) / 2);
-    bottom: calc(var(--mvv-item-h) / 2 - var(--mvv-dot) / 2);
-    right: 0;
-    width: var(--mvv-dot);
-    pointer-events: none;
-    z-index: 5;
-}
-
-/* Indicator sticks at the viewport centre while inside the rail */
-.mvv-number-indicator {
-    position: sticky;
-    top: calc(50vh - var(--mvv-dot) / 2);
-    margin-left: auto;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: var(--mvv-dot);
-    height: var(--mvv-dot);
-    flex-shrink: 0;
-
+.story-title-block h3 {
+    max-width: 520px;
+    margin: 0;
     color: var(--blue);
-    font-size: 28px;
-    font-weight: 700;
-    line-height: 1;
-    letter-spacing: -.04em;
-    font-variant-numeric: tabular-nums;
-
-    background: #fff;
-    border: 1px solid #e5eaf2;
-    border-radius: 50%;
-    box-shadow: 0 5px 20px rgba(22, 47, 91, .07);
-
-    transition: none;
+    font-size: var(--font-size-20);
+    line-height: 1.55;
+    font-weight: var(--font-weight-500);
 }
 
-
-/* =========================================================
-   INFORMATION CARD
-========================================================= */
-
-.mvv-card {
-    position: relative;
-    width: 80%;
-    padding: 55px 45px;
-
-    background: #f4f7fc;
-    border: 1px solid #e5eaf2;
-    border-radius: 20px;
-
-    transition:
-        background .4s ease,
-        border-color .4s ease,
-        box-shadow .4s ease;
+.story-description {
+    padding-left: 35px;
+    border-left: 2px solid var(--line);
 }
 
-.mvv-item.is-active .mvv-card {
-    background: #fff;
-    border-color: #dce5f5;
-    box-shadow: 0 15px 45px rgba(22, 47, 91, .07);
-}
-
-.mvv-number {
-    position: absolute;
-    top: 25px;
-    right: 30px;
-
-    color: #aab5c7;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: .08em;
-}
-
-.mvv-card .ic {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 58px;
-    height: 58px;
-    margin-bottom: 30px;
-
-    color: var(--blue);
-    background: rgba(35, 80, 219, .08);
-    border-radius: 14px;
-}
-
-.mvv-card .ic svg {
-    width: 26px;
-    height: 26px;
-}
-
-.mvv-card h3 {
+.story-description p {
     margin: 0 0 18px;
+    color: var(--text-light);
+    font-size: var(--font-size-16);
+    line-height: 1.95;
+}
 
+.story-description p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* JOURNEY */
+
+/* Manufacturing Journey rules share the .story wrapper and responsive blocks. */
+.story-journey {
+    padding: 50px 0;
+    border-top: 1px solid var(--line);
+}
+
+.story-journey-head {
+    display: flex;
+    justify-content: flex-start;
+    align-items: end;
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
+.story-small-label {
+    display: inline-block;
+    margin-bottom: 16px;
+    color: var(--blue);
+    font-size: 10px;
+    font-weight: 750;
+    letter-spacing: 1.8px;
+}
+
+.story-journey-head h3 {
+    margin: 0;
     color: var(--navy);
     font-size: var(--font-size-32);
-    font-weight: var(--font-weight-700);
     line-height: 1.2;
+    letter-spacing: -1.3px;
+    font-weight: var(--font-weight-600);
 }
 
-.mvv-card p {
-    max-width: 480px;
-    margin: 0;
+.story-journey-head h3 span {
+    color: var(--blue);
+}
 
+
+
+/* TIMELINE */
+
+.story .timeline {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    padding-top: 5px;
+}
+
+.story .timeline::before {
+    content: "";
+    position: absolute;
+    top: 31px;
+    left: 7%;
+    right: 7%;
+    height: 1px;
+    background: var(--line);
+}
+
+.story .tl-item {
+    position: relative;
+    z-index: 1;
+    padding: 0 25px 0 0;
+}
+
+.story .tl-item:last-child {
+    padding-right: 0;
+}
+
+.story .ic {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 62px;
+    height: 62px;
+    margin-bottom: 27px;
+    background: #fff;
+    border: 1px solid #dfe5f0;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(20, 40, 80, .05);
+}
+
+.story .ic svg {
+    width: 29px;
+    height: 29px;
+    stroke: var(--blue);
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.story .tlabel {
+    margin-bottom: 12px;
+    color: var(--blue);
+    font-size: 9px;
+    font-weight: 750;
+    letter-spacing: 1.1px;
+}
+
+.story .tl-item h4 {
+    margin: 0 0 11px;
+    color: var(--navy);
+    font-size: var(--font-size-18);
+    line-height: 1.4;
+    font-weight: var(--font-weight-600);
+}
+
+.story .tl-item p {
+    max-width: 260px;
+    margin: 0;
     color: var(--text-light);
-    font-size: 16px;
+    font-size: var(--font-size-14);
     line-height: 1.8;
 }
 
-.mvv-card ul {
+
+/* SUPPORT CARDS */
+
+.story-support-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    margin-top: 90px;
+}
+
+.story-support-card {
+    position: relative;
+    padding: 38px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.story-production {
+    background: #f3f5f9;
+    border: 1px solid #e8ebf1;
+}
+
+.story-ecosystem {
+    color: #fff;
+    background: var(--navy);
+}
+
+.story-support-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.story-support-top .story-small-label {
+    margin: 0;
+}
+
+.story-ecosystem .story-small-label {
+    color: #a8b9df;
+}
+
+.story-support-index {
+    color: #9ba8bd;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.story-support-card h3 {
+    max-width: 420px;
+    margin: 0 0 17px;
+    color: var(--navy);
+    font-size: var(--font-size-28);
+    line-height: 1.2;
+    letter-spacing: -.8px;
+    font-weight: var(--font-weight-600);
+}
+
+.story-ecosystem h3 {
+    color: #fff;
+}
+
+.story-support-card > p {
+    margin: 0;
+    color: var(--text-light);
+    font-size: var(--font-size-14);
+    line-height: 1.9;
+}
+
+.story-ecosystem > p {
+    color: #bdc8dc;
+}
+
+
+/* PRODUCTION FEATURE LINES */
+
+.story-feature-line {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 0;
+    border-top: 1px solid #dfe4ec;
+    color: var(--navy);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.story-feature-line:first-of-type {
+    margin-top: 25px;
+}
+
+.story-feature-line span {
+    color: var(--blue);
+    font-size: 10px;
+    font-weight: 750;
+}
+
+
+/* AKSI MARK */
+
+.story-aksi-mark {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-
-    margin: 0;
-    padding: 0;
-    list-style: none;
+    gap: 2px;
+    width: fit-content;
+    margin-bottom: 28px;
 }
 
-.mvv-card li {
-    position: relative;
-    padding-left: 25px;
-
-    color: var(--text-light);
-    font-size: 15px;
-    line-height: 1.5;
+.story-aksi-mark span:first-child {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: 3px;
 }
 
-.mvv-card li::before {
-    content: "";
-    position: absolute;
-    top: 8px;
-    left: 0;
-
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--green);
+.story-aksi-mark span:last-child {
+    color: #a8b9df;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
 }
 
 
-/* =========================================================
-   RESPONSIVE
-========================================================= */
+/* RESPONSIVE */
 
 @media (max-width: 1024px) {
 
-    .mvv-layout {
+    .story-intro-grid {
         gap: 50px;
     }
 
-    .mvv-right {
-        --mvv-item-h: 50vh;
+    .story .tl-item {
+        padding-right: 15px;
     }
 
-    .mvv-card {
-        padding: 40px 30px;
+    .story-support-card {
+        padding: 30px;
     }
 
 }
 
 @media (max-width: 768px) {
 
-    .mvv-section {
-        padding: 40px 0;
+    .story {
+        padding: 40px 0 ;
     }
 
-    .mvv-layout {
+    .story-intro-grid {
         grid-template-columns: 1fr;
-        gap: 35px;
+        gap: 30px;
     }
 
-    .mvv-left {
-        position: relative;
-        top: auto;
-        padding-bottom: 0;
+    .story-description {
+        padding-left: 22px;
     }
 
-    .mvv-heading {
-        max-width: none;
-        font-size: var(--font-size-48);
+    .story-title-block h2 {
+        font-size: var(--font-size-40);
     }
 
-    .mvv-progress {
-        margin-top: 22px;
+    .story-journey {
+        padding: 45px 0;
     }
 
-    .mvv-right {
-        gap: 20px;
+    .story-journey-head {
+        display: block;
+        margin-bottom: 35px;
     }
 
-    .mvv-item {
-        min-height: auto;
-        opacity: 1;
+    .story .timeline {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 40px;
     }
 
-    .mvv-number-rail {
+    .story .timeline::before {
         display: none;
     }
 
-    .mvv-card {
-        width: 100%;
-        padding: 40px 28px;
-    }
-
-    .mvv-card h3 {
-        font-size: var(--font-size-24);
+    .story-support-grid {
+        grid-template-columns: 1fr;
+        margin-top: 60px;
     }
 
 }
 
 @media (max-width: 480px) {
 
-    .mvv-heading {
-        font-size: var(--font-size-40);
+    .story {
+        padding: 35px 0 ;
     }
 
-    .mvv-card {
-        padding: 35px 22px;
+    .story-title-block h2 {
+        font-size: var(--font-size-32);
+        letter-spacing: -1.3px;
     }
 
-    .mvv-card .ic {
-        width: 50px;
-        height: 50px;
-        margin-bottom: 22px;
+    .story-title-block h3 {
+        font-size: var(--font-size-18);
     }
 
-    .mvv-card p {
-        font-size: 14px;
+    .story .timeline {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .story .tl-item {
+        padding: 0;
+    }
+
+    .story .ic {
+        margin-bottom: 18px;
+    }
+
+    .story-support-card {
+        padding: 26px 22px;
+    }
+
+    .story-support-card h3 {
+        font-size: var(--font-size-24);
+    }
+
+    .story-journey-head h3 {
+        font-size: var(--font-size-28);
     }
 
 }
-
 
 
 /* =========================================================
@@ -5934,6 +5994,355 @@ header {
 
 
 /* =========================================================
+   MISSION, VISION & VALUES
+========================================================= */
+
+.mvv-section {
+    position: relative;
+    padding: 50px 0;
+}
+
+.mvv-layout {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 55px;
+    align-items: start;
+}
+
+
+/* =========================================================
+   LEFT STICKY SIDE
+========================================================= */
+
+.mvv-left {
+    position: sticky;
+    top: 35vh;
+    align-self: start;
+    padding-bottom: 30px;
+}
+
+.mvv-eyebrow {
+    display: block;
+    margin-bottom: 22px;
+
+    color: var(--blue);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .14em;
+}
+
+.mvv-heading {
+    max-width: 450px;
+    margin: 0;
+
+    color: var(--navy);
+    font-size: var(--font-size-64);
+    font-weight: var(--font-weight-700);
+    line-height: 1.05;
+    letter-spacing: -.045em;
+    text-transform: uppercase;
+}
+
+.mvv-heading span {
+    display: block;
+    color: var(--blue);
+    transition: opacity .3s ease, transform .3s ease;
+}
+
+/* Progress line */
+
+.mvv-progress {
+    position: relative;
+    width: 100px;
+    height: 3px;
+    margin-top: 35px;
+    overflow: hidden;
+    background: #dce3ef;
+}
+
+.mvv-progress-fill {
+    position: absolute;
+    inset: 0;
+    background: var(--blue);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .5s ease;
+}
+
+
+/* =========================================================
+   RIGHT SCROLLING SIDE
+========================================================= */
+
+.mvv-right {
+    --mvv-item-h: 55vh;   /* card height, shared by items and rail */
+    --mvv-dot: 58px;      /* indicator size */
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.mvv-item {
+    min-height: var(--mvv-item-h);
+    display: flex;
+    align-items: center;
+    opacity: .4;
+    transition: opacity .4s ease;
+}
+
+.mvv-item.is-active {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   MOVING NUMBER INDICATOR
+========================================================= */
+
+/* Rail runs from the centre of the first card
+   to the centre of the last card */
+.mvv-number-rail {
+    position: absolute;
+    top: calc(var(--mvv-item-h) / 2 - var(--mvv-dot) / 2);
+    bottom: calc(var(--mvv-item-h) / 2 - var(--mvv-dot) / 2);
+    right: 0;
+    width: var(--mvv-dot);
+    pointer-events: none;
+    z-index: 5;
+}
+
+/* Indicator sticks at the viewport centre while inside the rail */
+.mvv-number-indicator {
+    position: sticky;
+    top: calc(50vh - var(--mvv-dot) / 2);
+    margin-left: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: var(--mvv-dot);
+    height: var(--mvv-dot);
+    flex-shrink: 0;
+
+    color: var(--blue);
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -.04em;
+    font-variant-numeric: tabular-nums;
+
+    background: #fff;
+    border: 1px solid #e5eaf2;
+    border-radius: 50%;
+    box-shadow: 0 5px 20px rgba(22, 47, 91, .07);
+
+    transition: none;
+}
+
+
+/* =========================================================
+   INFORMATION CARD
+========================================================= */
+
+.mvv-card {
+    position: relative;
+    width: 80%;
+    padding: 55px 45px;
+
+    background: #f4f7fc;
+    border: 1px solid #e5eaf2;
+    border-radius: 20px;
+
+    transition:
+        background .4s ease,
+        border-color .4s ease,
+        box-shadow .4s ease;
+}
+
+.mvv-item.is-active .mvv-card {
+    background: #fff;
+    border-color: #dce5f5;
+    box-shadow: 0 15px 45px rgba(22, 47, 91, .07);
+}
+
+.mvv-number {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+
+    color: #aab5c7;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .08em;
+}
+
+.mvv-card .ic {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 58px;
+    height: 58px;
+    margin-bottom: 30px;
+
+    color: var(--blue);
+    background: rgba(35, 80, 219, .08);
+    border-radius: 14px;
+}
+
+.mvv-card .ic svg {
+    width: 26px;
+    height: 26px;
+}
+
+.mvv-card h3 {
+    margin: 0 0 18px;
+
+    color: var(--navy);
+    font-size: var(--font-size-32);
+    font-weight: var(--font-weight-700);
+    line-height: 1.2;
+}
+
+.mvv-card p {
+    max-width: 480px;
+    margin: 0;
+
+    color: var(--text-light);
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.mvv-card ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.mvv-card li {
+    position: relative;
+    padding-left: 25px;
+
+    color: var(--text-light);
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.mvv-card li::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 0;
+
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--green);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1024px) {
+
+    .mvv-layout {
+        gap: 50px;
+    }
+
+    .mvv-right {
+        --mvv-item-h: 50vh;
+    }
+
+    .mvv-card {
+        padding: 40px 30px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .mvv-section {
+        padding: 40px 0;
+    }
+
+    .mvv-layout {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .mvv-left {
+        position: relative;
+        top: auto;
+        padding-bottom: 0;
+    }
+
+    .mvv-heading {
+        max-width: none;
+        font-size: var(--font-size-48);
+    }
+
+    .mvv-progress {
+        margin-top: 22px;
+    }
+
+    .mvv-right {
+        gap: 20px;
+    }
+
+    .mvv-item {
+        min-height: auto;
+        opacity: 1;
+    }
+
+    .mvv-number-rail {
+        display: none;
+    }
+
+    .mvv-card {
+        width: 100%;
+        padding: 40px 28px;
+    }
+
+    .mvv-card h3 {
+        font-size: var(--font-size-24);
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .mvv-heading {
+        font-size: var(--font-size-40);
+    }
+
+    .mvv-card {
+        padding: 35px 22px;
+    }
+
+    .mvv-card .ic {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 22px;
+    }
+
+    .mvv-card p {
+        font-size: 14px;
+    }
+
+}
+
+
+
+/* =========================================================
    TECHNOLOGY & EXPERTISE
 ========================================================= */
 
@@ -5941,7 +6350,7 @@ header {
     position: relative;
     padding: 50px 0;
     overflow: hidden;
-  
+
 }
 
 .technology-section .wrap {
@@ -6247,12 +6656,93 @@ header {
 
 
 /* =========================================================
+   ABOUT US - TEAM
+========================================================= */
+
+.team-head {
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    margin-bottom:28px;
+}
+
+.team-head h2 {
+    font-size:var(--font-size-40);
+    font-weight:var(--font-weight-700);
+}
+
+.team-head a {
+    font-size:13px;
+    font-weight:700;
+    color:var(--blue);
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+}
+
+.team-grid {
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:20px;
+}
+
+.team-card {
+    border:1px solid var(--line);
+    border-radius:12px;
+    overflow:hidden;
+}
+
+.team-card img {
+    width:100%;
+    height:160px;
+    object-fit:cover;
+}
+
+.team-card .body {
+    padding:14px 16px 18px;
+    position:relative;
+}
+
+.team-card h4 {
+    font-size:14px;
+    font-weight:700;
+    margin-bottom:2px;
+}
+
+.team-card .role {
+    font-size:11.5px;
+    color:var(--blue);
+    font-weight:600;
+    margin-bottom:8px;
+}
+
+.team-card p {
+    font-size:11.5px;
+    color:var(--text);
+    line-height:1.4;
+}
+
+.team-card .li {
+    position:absolute;
+    top:14px;
+    right:16px;
+    width:22px;
+    height:22px;
+    border-radius:6px;
+    background:#eaf1fd;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--blue);
+}
+
+/* =========================================================
    QUALITY, SAFETY & COMPLIANCE
 ========================================================= */
 
 .quality-section {
     padding: 50px 0 ;
-   
+
     color: var(--text);
     overflow: hidden;
 }
@@ -7028,6 +7518,170 @@ header {
 }
 
 
+/* ==========================================================================
+   Integrations section - "Works on your fav platforms."
+   Pixel layout taken 1:1 from the screen recording (1280 px wide).
+   ========================================================================== */
+
+.integ {
+    --integ-bg: #f5f6ec;
+    --integ-ink: #0a0a0a;
+    --integ-label: #1a190d;
+    --integ-line: #173b21;
+    --integ-dot: #12261a;
+    --integ-lime: #d0f189;
+
+    position: relative;
+    overflow: hidden;
+    background: var(--integ-bg);
+    padding: 50px 0 ;
+}
+
+/* fixed-size composition, centred on the page */
+.integ__stage {
+    position: relative;
+    width: 1000px;
+    height: 425px;
+    margin: 0 auto;
+}
+
+/* ---- animated glow (colour cycle ~4.3s, soft blurred ellipses) ---------- */
+.integ__glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    pointer-events: none;
+}
+.integ__glow--a {
+    left: 14px;  top: -4px;  width: 720px; height: 380px;
+    transform: rotate(-8deg);
+    background-color: rgba(215, 170, 100, .15);
+    animation: integ-glow-a 4.32s linear infinite;
+}
+.integ__glow--b {
+    left: 134px; top: 256px; width: 520px; height: 200px;
+    background-color: rgba(130, 200, 110, .13);
+    animation: integ-glow-b 4.32s linear infinite;
+}
+@keyframes integ-glow-a {
+    0%, 100% { background-color: rgba(215, 170, 100, .15); }
+    33%      { background-color: rgba(240, 190,  60, .16); }
+    56%      { background-color: rgba(150, 160, 150, .115); }
+    67%      { background-color: rgba(110, 170, 250, .14); }
+    78%      { background-color: rgba(120, 140, 175, .13); }
+}
+@keyframes integ-glow-b {
+    0%, 100% { background-color: rgba(130, 200, 110, .13); }
+    33%      { background-color: rgba(235, 200,  80, .12); }
+    44%      { background-color: rgba(190, 170, 185, .11); }
+    67%      { background-color: rgba(120, 110, 250, .10); }
+    78%      { background-color: rgba(110, 160, 190, .14); }
+}
+
+
+/* ---- heading ------------------------------------------------------------- */
+.integ__title {
+    position: absolute;
+    left: 0; top: 33.5px;
+    width: 1000px;
+    margin: 0;
+    text-align: center;
+    color: var(--integ-ink);
+    font: 500 38px/40px 'Space Grotesk', system-ui, sans-serif;
+}
+
+/* ---- centre card --------------------------------------------------------- */
+.integ__card {
+    position: absolute;
+    left: 456px; top: 212px;
+    width: 110px; height: 110px;
+    border-radius: 20px;
+    background: linear-gradient(180deg, rgba(255,255,255,.55), rgba(255,255,255,.25));
+    box-shadow: 0 10px 30px rgba(60, 60, 40, .07),
+                inset 0 1px 0 rgba(255,255,255,.7);
+}
+.integ__card svg { display: block; }
+
+/* ---- connector lines ----------------------------------------------------- */
+.integ__lines {
+    position: absolute;
+    left: 0; top: 0;
+    overflow: visible;
+}
+.integ__lines path {
+    fill: none;
+    stroke: var(--integ-line);
+    stroke-width: 1;
+}
+
+/* ---- the moving dots ------------------------------------------------------
+   Each dot rides its own connector (offset-path is set inline from PHP),
+   linear, infinite, same start time. Durations: Squarespace 3s,
+   WordPress / Twitter / Intercom 7s, Amazon / Mailchimp 6s.                  */
+.integ__dot {
+    position: absolute;
+    left: 0; top: 0;
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--integ-dot);
+    box-shadow: 0 0 0 3px rgba(244, 245, 236, .92);   /* little gap around the dot */
+    offset-rotate: 0deg;
+    offset-anchor: 50% 50%;
+    animation-name: integ-dot;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    z-index: 2;
+}
+@keyframes integ-dot {
+    from { offset-distance: 0%; }
+    to   { offset-distance: 100%; }
+}
+
+/* ---- icon + label rows ---------------------------------------------------
+   Left rows are anchored by their right edge, right rows by their left edge,
+   so any label length lines up with the connector end.                      */
+.integ__item {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    height: 36px;
+    color: var(--integ-label);
+    white-space: nowrap;
+}
+.integ__item--left  { gap: 17px; }
+.integ__item--right { gap: 18px; }
+.integ__icon {
+    display: block;
+    width: 32px; height: 32px;
+    flex: none;
+}
+.integ__icon svg { display: block; width: 100%; height: 100%; }
+.integ__label {
+    font: 500 14.4px/24px 'Inter', system-ui, sans-serif;
+}
+
+/* ---- note pill ----------------------------------------------------------- */
+.integ__note {
+    position: absolute;
+    left: 327px; top: 400px;
+    box-sizing: border-box;
+    width: 348px; height: 25px;
+    margin: 0;
+    padding: 0 13px;
+    border: 1px solid rgba(0, 0, 0, .06);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, .3);
+    color: var(--integ-label);
+    font: 500 10px/23px 'Inter', system-ui, sans-serif;
+    white-space: nowrap;
+}
+
+/* ---- optional: shrink the fixed composition on small screens -------------- */
+@media (max-width: 1000px) { .integ__stage { zoom: .8; } }
+@media (max-width: 800px)  { .integ__stage { zoom: .62; } }
+@media (max-width: 620px)  { .integ__stage { zoom: .45; } }
+
+
 /* =========================================================
    ENGINEERING APPROACH
 ========================================================= */
@@ -7438,409 +8092,6 @@ header {
 
 
 /* =========================================================
-   ABOUT - OUR STORY & JOURNEY
-========================================================= */
-
-.story {
-    padding: 50px 0 ;
-    
-    overflow: hidden;
-}
-
-.story .wrap {
-    position: relative;
-}
-
-
-/* INTRO */
-
-.story-intro-grid {
-    display: grid;
-    grid-template-columns: 1fr .85fr;
-    gap: 90px;
-    align-items: center;
-}
-
-.story-title-block h2 {
-    margin: 0 0 22px;
-    color: var(--navy);
-    font-size: var(--font-size-48);
-    line-height: 1.12;
-    letter-spacing: -2px;
-    font-weight: var(--font-weight-600);
-}
-
-.story-title-block h3 {
-    max-width: 520px;
-    margin: 0;
-    color: var(--blue);
-    font-size: var(--font-size-20);
-    line-height: 1.55;
-    font-weight: var(--font-weight-500);
-}
-
-.story-description {
-    padding-left: 35px;
-    border-left: 2px solid var(--line);
-}
-
-.story-description p {
-    margin: 0 0 18px;
-    color: var(--text-light);
-    font-size: var(--font-size-16);
-    line-height: 1.95;
-}
-
-.story-description p:last-child {
-    margin-bottom: 0;
-}
-
-
-/* JOURNEY */
-
-.story-journey {
-    padding: 50px 0;
-    border-top: 1px solid var(--line);
-}
-
-.story-journey-head {
-    display: flex;
-    justify-content: flex-start;
-    align-items: end;
-    gap: 50px;
-    margin-bottom: 50px;
-}
-
-.story-small-label {
-    display: inline-block;
-    margin-bottom: 16px;
-    color: var(--blue);
-    font-size: 10px;
-    font-weight: 750;
-    letter-spacing: 1.8px;
-}
-
-.story-journey-head h3 {
-    margin: 0;
-    color: var(--navy);
-    font-size: var(--font-size-32);
-    line-height: 1.2;
-    letter-spacing: -1.3px;
-    font-weight: var(--font-weight-600);
-}
-
-.story-journey-head h3 span {
-    color: var(--blue);
-}
-
-
-
-/* TIMELINE */
-
-.story .timeline {
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0;
-    padding-top: 5px;
-}
-
-.story .timeline::before {
-    content: "";
-    position: absolute;
-    top: 31px;
-    left: 7%;
-    right: 7%;
-    height: 1px;
-    background: var(--line);
-}
-
-.story .tl-item {
-    position: relative;
-    z-index: 1;
-    padding: 0 25px 0 0;
-}
-
-.story .tl-item:last-child {
-    padding-right: 0;
-}
-
-.story .ic {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 62px;
-    height: 62px;
-    margin-bottom: 27px;
-    background: #fff;
-    border: 1px solid #dfe5f0;
-    border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(20, 40, 80, .05);
-}
-
-.story .ic svg {
-    width: 29px;
-    height: 29px;
-    stroke: var(--blue);
-    stroke-width: 1.6;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
-
-.story .tlabel {
-    margin-bottom: 12px;
-    color: var(--blue);
-    font-size: 9px;
-    font-weight: 750;
-    letter-spacing: 1.1px;
-}
-
-.story .tl-item h4 {
-    margin: 0 0 11px;
-    color: var(--navy);
-    font-size: var(--font-size-18);
-    line-height: 1.4;
-    font-weight: var(--font-weight-600);
-}
-
-.story .tl-item p {
-    max-width: 260px;
-    margin: 0;
-    color: var(--text-light);
-    font-size: var(--font-size-14);
-    line-height: 1.8;
-}
-
-
-/* SUPPORT CARDS */
-
-.story-support-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 22px;
-    margin-top: 90px;
-}
-
-.story-support-card {
-    position: relative;
-    padding: 38px;
-    border-radius: 12px;
-    overflow: hidden;
-}
-
-.story-production {
-    background: #f3f5f9;
-    border: 1px solid #e8ebf1;
-}
-
-.story-ecosystem {
-    color: #fff;
-    background: var(--navy);
-}
-
-.story-support-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
-}
-
-.story-support-top .story-small-label {
-    margin: 0;
-}
-
-.story-ecosystem .story-small-label {
-    color: #a8b9df;
-}
-
-.story-support-index {
-    color: #9ba8bd;
-    font-size: 12px;
-    font-weight: 700;
-}
-
-.story-support-card h3 {
-    max-width: 420px;
-    margin: 0 0 17px;
-    color: var(--navy);
-    font-size: var(--font-size-28);
-    line-height: 1.2;
-    letter-spacing: -.8px;
-    font-weight: var(--font-weight-600);
-}
-
-.story-ecosystem h3 {
-    color: #fff;
-}
-
-.story-support-card > p {
-    margin: 0;
-    color: var(--text-light);
-    font-size: var(--font-size-14);
-    line-height: 1.9;
-}
-
-.story-ecosystem > p {
-    color: #bdc8dc;
-}
-
-
-/* PRODUCTION FEATURE LINES */
-
-.story-feature-line {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 15px 0;
-    border-top: 1px solid #dfe4ec;
-    color: var(--navy);
-    font-size: 13px;
-    font-weight: 600;
-}
-
-.story-feature-line:first-of-type {
-    margin-top: 25px;
-}
-
-.story-feature-line span {
-    color: var(--blue);
-    font-size: 10px;
-    font-weight: 750;
-}
-
-
-/* AKSI MARK */
-
-.story-aksi-mark {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    width: fit-content;
-    margin-bottom: 28px;
-}
-
-.story-aksi-mark span:first-child {
-    color: #fff;
-    font-size: 30px;
-    font-weight: 800;
-    letter-spacing: 3px;
-}
-
-.story-aksi-mark span:last-child {
-    color: #a8b9df;
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 2px;
-}
-
-
-/* RESPONSIVE */
-
-@media (max-width: 1024px) {
-
-    .story-intro-grid {
-        gap: 50px;
-    }
-
-    .story .tl-item {
-        padding-right: 15px;
-    }
-
-    .story-support-card {
-        padding: 30px;
-    }
-
-}
-
-@media (max-width: 768px) {
-
-    .story {
-        padding: 40px 0 ;
-    }
-
-    .story-intro-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .story-description {
-        padding-left: 22px;
-    }
-
-    .story-title-block h2 {
-        font-size: var(--font-size-40);
-    }
-
-    .story-journey {
-        padding: 45px 0;
-    }
-
-    .story-journey-head {
-        display: block;
-        margin-bottom: 35px;
-    }
-
-    .story .timeline {
-        grid-template-columns: repeat(2, 1fr);
-        row-gap: 40px;
-    }
-
-    .story .timeline::before {
-        display: none;
-    }
-
-    .story-support-grid {
-        grid-template-columns: 1fr;
-        margin-top: 60px;
-    }
-
-}
-
-@media (max-width: 480px) {
-
-    .story {
-        padding: 35px 0 ;
-    }
-
-    .story-title-block h2 {
-        font-size: var(--font-size-32);
-        letter-spacing: -1.3px;
-    }
-
-    .story-title-block h3 {
-        font-size: var(--font-size-18);
-    }
-
-    .story .timeline {
-        grid-template-columns: 1fr;
-        gap: 32px;
-    }
-
-    .story .tl-item {
-        padding: 0;
-    }
-
-    .story .ic {
-        margin-bottom: 18px;
-    }
-
-    .story-support-card {
-        padding: 26px 22px;
-    }
-
-    .story-support-card h3 {
-        font-size: var(--font-size-24);
-    }
-
-    .story-journey-head h3 {
-        font-size: var(--font-size-28);
-    }
-
-}
-
-
-/* =========================================================
    ABOUT PAGE - FINAL CTA
 ========================================================= */
 
@@ -8139,251 +8390,6 @@ header {
     }
 }
 
-
-/* ==========================================================================
-   Integrations section - "Works on your fav platforms."
-   Pixel layout taken 1:1 from the screen recording (1280 px wide).
-   ========================================================================== */
-
-.integ {
-    --integ-bg: #f5f6ec;
-    --integ-ink: #0a0a0a;
-    --integ-label: #1a190d;
-    --integ-line: #173b21;
-    --integ-dot: #12261a;
-    --integ-lime: #d0f189;
-
-    position: relative;
-    overflow: hidden;
-    background: var(--integ-bg);
-    padding: 50px 0 ;
-}
-
-/* fixed-size composition, centred on the page */
-.integ__stage {
-    position: relative;
-    width: 1000px;
-    height: 425px;
-    margin: 0 auto;
-}
-
-/* ---- animated glow (colour cycle ~4.3s, soft blurred ellipses) ---------- */
-.integ__glow {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(60px);
-    pointer-events: none;
-}
-.integ__glow--a {
-    left: 14px;  top: -4px;  width: 720px; height: 380px;
-    transform: rotate(-8deg);
-    background-color: rgba(215, 170, 100, .15);
-    animation: integ-glow-a 4.32s linear infinite;
-}
-.integ__glow--b {
-    left: 134px; top: 256px; width: 520px; height: 200px;
-    background-color: rgba(130, 200, 110, .13);
-    animation: integ-glow-b 4.32s linear infinite;
-}
-@keyframes integ-glow-a {
-    0%, 100% { background-color: rgba(215, 170, 100, .15); }
-    33%      { background-color: rgba(240, 190,  60, .16); }
-    56%      { background-color: rgba(150, 160, 150, .115); }
-    67%      { background-color: rgba(110, 170, 250, .14); }
-    78%      { background-color: rgba(120, 140, 175, .13); }
-}
-@keyframes integ-glow-b {
-    0%, 100% { background-color: rgba(130, 200, 110, .13); }
-    33%      { background-color: rgba(235, 200,  80, .12); }
-    44%      { background-color: rgba(190, 170, 185, .11); }
-    67%      { background-color: rgba(120, 110, 250, .10); }
-    78%      { background-color: rgba(110, 160, 190, .14); }
-}
-
-
-/* ---- heading ------------------------------------------------------------- */
-.integ__title {
-    position: absolute;
-    left: 0; top: 33.5px;
-    width: 1000px;
-    margin: 0;
-    text-align: center;
-    color: var(--integ-ink);
-    font: 500 38px/40px 'Space Grotesk', system-ui, sans-serif;
-}
-
-/* ---- centre card --------------------------------------------------------- */
-.integ__card {
-    position: absolute;
-    left: 456px; top: 212px;
-    width: 110px; height: 110px;
-    border-radius: 20px;
-    background: linear-gradient(180deg, rgba(255,255,255,.55), rgba(255,255,255,.25));
-    box-shadow: 0 10px 30px rgba(60, 60, 40, .07),
-                inset 0 1px 0 rgba(255,255,255,.7);
-}
-.integ__card svg { display: block; }
-
-/* ---- connector lines ----------------------------------------------------- */
-.integ__lines {
-    position: absolute;
-    left: 0; top: 0;
-    overflow: visible;
-}
-.integ__lines path {
-    fill: none;
-    stroke: var(--integ-line);
-    stroke-width: 1;
-}
-
-/* ---- the moving dots ------------------------------------------------------
-   Each dot rides its own connector (offset-path is set inline from PHP),
-   linear, infinite, same start time. Durations: Squarespace 3s,
-   WordPress / Twitter / Intercom 7s, Amazon / Mailchimp 6s.                  */
-.integ__dot {
-    position: absolute;
-    left: 0; top: 0;
-    width: 5px; height: 5px;
-    border-radius: 50%;
-    background: var(--integ-dot);
-    box-shadow: 0 0 0 3px rgba(244, 245, 236, .92);   /* little gap around the dot */
-    offset-rotate: 0deg;
-    offset-anchor: 50% 50%;
-    animation-name: integ-dot;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    z-index: 2;
-}
-@keyframes integ-dot {
-    from { offset-distance: 0%; }
-    to   { offset-distance: 100%; }
-}
-
-/* ---- icon + label rows ---------------------------------------------------
-   Left rows are anchored by their right edge, right rows by their left edge,
-   so any label length lines up with the connector end.                      */
-.integ__item {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    height: 36px;
-    color: var(--integ-label);
-    white-space: nowrap;
-}
-.integ__item--left  { gap: 17px; }
-.integ__item--right { gap: 18px; }
-.integ__icon {
-    display: block;
-    width: 32px; height: 32px;
-    flex: none;
-}
-.integ__icon svg { display: block; width: 100%; height: 100%; }
-.integ__label {
-    font: 500 14.4px/24px 'Inter', system-ui, sans-serif;
-}
-
-/* ---- note pill ----------------------------------------------------------- */
-.integ__note {
-    position: absolute;
-    left: 327px; top: 400px;
-    box-sizing: border-box;
-    width: 348px; height: 25px;
-    margin: 0;
-    padding: 0 13px;
-    border: 1px solid rgba(0, 0, 0, .06);
-    border-radius: 8px;
-    background: rgba(255, 255, 255, .3);
-    color: var(--integ-label);
-    font: 500 10px/23px 'Inter', system-ui, sans-serif;
-    white-space: nowrap;
-}
-
-/* ---- optional: shrink the fixed composition on small screens -------------- */
-@media (max-width: 1000px) { .integ__stage { zoom: .8; } }
-@media (max-width: 800px)  { .integ__stage { zoom: .62; } }
-@media (max-width: 620px)  { .integ__stage { zoom: .45; } }
-
-
-/* =========================================================
-   ABOUT US - TEAM
-========================================================= */
-
-.team-head {
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-end;
-    margin-bottom:28px;
-}
-
-.team-head h2 {
-    font-size:var(--font-size-40);
-    font-weight:var(--font-weight-700);
-}
-
-.team-head a {
-    font-size:13px;
-    font-weight:700;
-    color:var(--blue);
-    display:inline-flex;
-    align-items:center;
-    gap:6px;
-}
-
-.team-grid {
-    display:grid;
-    grid-template-columns:repeat(5,1fr);
-    gap:20px;
-}
-
-.team-card {
-    border:1px solid var(--line);
-    border-radius:12px;
-    overflow:hidden;
-}
-
-.team-card img {
-    width:100%;
-    height:160px;
-    object-fit:cover;
-}
-
-.team-card .body {
-    padding:14px 16px 18px;
-    position:relative;
-}
-
-.team-card h4 {
-    font-size:14px;
-    font-weight:700;
-    margin-bottom:2px;
-}
-
-.team-card .role {
-    font-size:11.5px;
-    color:var(--blue);
-    font-weight:600;
-    margin-bottom:8px;
-}
-
-.team-card p {
-    font-size:11.5px;
-    color:var(--text);
-    line-height:1.4;
-}
-
-.team-card .li {
-    position:absolute;
-    top:14px;
-    right:16px;
-    width:22px;
-    height:22px;
-    border-radius:6px;
-    background:#eaf1fd;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:var(--blue);
-}
 
 /* =========================================================
    ABOUT US - CAPABILITIES / PROCESS
