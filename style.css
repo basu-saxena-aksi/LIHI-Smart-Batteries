@@ -881,7 +881,7 @@ html.is-transition-entering.is-transition-ready
 
 /* =========================================================
    3. SITE HEADER AND NAVIGATION
-   HEADER
+   1. HEADER SHELL AND LOGO
 ========================================================= */
 
 header {
@@ -975,6 +975,10 @@ header {
     margin-top: -2px;
 }
 
+/* =========================================================
+   2. DESKTOP NAVIGATION
+========================================================= */
+
 .nav-links {
     display: flex;
     align-items: center;
@@ -996,8 +1000,8 @@ header {
     align-items: center;
     gap: 4px;
     padding: 18px 0;
-    font-size: 15px;
-    font-weight: 500;
+    font-size: var(--font-size-16);
+    font-weight: var(--font-weight-500);
     line-height: 1;
     color: var(--navy);
     text-decoration: none;
@@ -1031,7 +1035,7 @@ header {
 
 .nav-links-container > a.active {
     color: var(--blue);
-    font-weight: 600;
+    font-weight: var(--font-weight-600);
 }
 
 
@@ -1087,7 +1091,8 @@ header {
 }
 
 /* =========================================================
-   2. ABOUT US & MEDIA - REGULAR DROPDOWN
+   3. REGULAR DROPDOWN MENUS
+   About Us and Media
 ========================================================= */
 
 .nav-links-container.has-dropdown > .nav-dropdown {
@@ -1167,8 +1172,8 @@ header {
     border-radius: 7px;
 
     color: var(--navy);
-    font-size: 14px;
-    font-weight: 500;
+    font-size: var(--font-size-14);
+    font-weight: var(--font-weight-500);
     line-height: 1.4;
 
     text-decoration: none;
@@ -1216,7 +1221,7 @@ header {
 }
 
 /* =========================================================
-   4. SHARED IMAGE MEGA MENU
+   4. MEGA MENUS
    Products / Industries / Applications
 ========================================================= */
 
@@ -1461,8 +1466,8 @@ header {
    
     padding-bottom: 4px;
 
-    font-size: 16px;
-    font-weight: 700;
+    font-size: var(--font-size-16);
+    font-weight: var(--font-weight-700);
     line-height: 1.3;
 
     color: #fff;
@@ -1525,7 +1530,7 @@ header {
 
 
 /* =========================================================
-   MENU
+   5. MOBILE NAVIGATION PANEL
 ========================================================= */
 
 .menu-bar {
@@ -1663,8 +1668,8 @@ header {
     padding: 16px 0;
     color: var(--navy);
     text-decoration: none;
-    font-size: 18px;
-    font-weight: 600;
+    font-size: var(--font-size-18);
+    font-weight: var(--font-weight-600);
 
     transition: color 0.3s ease;
 }
@@ -1727,8 +1732,8 @@ header {
 
     color: var(--muted);
     text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
+    font-size: var(--font-size-14);
+    font-weight: var(--font-weight-500);
 
     transition:
         color 0.3s ease,
@@ -1777,8 +1782,8 @@ header {
     display: inline;
     padding: 0;
     border: none;
-    font-size: 14px;
-    font-weight: 500;
+    font-size: var(--font-size-14);
+    font-weight: var(--font-weight-500);
     color: var(--muted);
     text-decoration: none;
 }
@@ -15969,7 +15974,7 @@ body.company-video-lightbox-open {
     }
 
     .nav-product-card-title {
-        font-size: 14px;
+        font-size: var(--font-size-14);
     }
 
     /* Home */
