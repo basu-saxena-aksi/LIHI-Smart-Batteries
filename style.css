@@ -55,7 +55,44 @@ Version: 1.0
     --muted:#7C8598;   
     --gutter:40px;        /* page side padding, reduced per breakpoint */
     --faq-sticky-top: 85px;
+
+    --font-size-14:14px;
+    --font-size-16:16px;
+    --font-size-18:18px;
+    --font-size-20:20px;
+    --font-size-24:24px;
+    --font-size-28:28px;
+    --font-size-32:32px;
+    --font-size-40:40px;
+    --font-size-48:48px;
+    --font-size-56:56px;
+    --font-size-64:64px;
+    --font-size-72:72px;
+
+    --font-weight-400:400;
+    --font-weight-500:500;
+    --font-weight-600:600;
+    --font-weight-700:700;
 }
+
+/* Typography utilities */
+.lihi-font-size-14 { font-size:var(--font-size-14); }
+.lihi-font-size-16 { font-size:var(--font-size-16); }
+.lihi-font-size-18 { font-size:var(--font-size-18); }
+.lihi-font-size-20 { font-size:var(--font-size-20); }
+.lihi-font-size-24 { font-size:var(--font-size-24); }
+.lihi-font-size-28 { font-size:var(--font-size-28); }
+.lihi-font-size-32 { font-size:var(--font-size-32); }
+.lihi-font-size-40 { font-size:var(--font-size-40); }
+.lihi-font-size-48 { font-size:var(--font-size-48); }
+.lihi-font-size-56 { font-size:var(--font-size-56); }
+.lihi-font-size-64 { font-size:var(--font-size-64); }
+.lihi-font-size-72 { font-size:var(--font-size-72); }
+
+.lihi-font-weight-400 { font-weight:var(--font-weight-400); }
+.lihi-font-weight-500 { font-weight:var(--font-weight-500); }
+.lihi-font-weight-600 { font-weight:var(--font-weight-600); }
+.lihi-font-weight-700 { font-weight:var(--font-weight-700); }
 
 /* =========================================================
    GLOBAL SMOOTH SCROLL
