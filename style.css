@@ -8403,10 +8403,14 @@ header {
    FOOTER
 ========================================================= */
 
+/* =========================================================
+   FOOTER — FLOATING CUSTOM BATTERY BANNER
+========================================================= */
+
 footer {
     position: relative;
     isolation: isolate;
-    overflow: hidden;
+    overflow: visible;
 
     background: linear-gradient(
         105deg,
@@ -8416,8 +8420,109 @@ footer {
     );
 
     color: #E0E6F0;
-    padding: 50px 0 0;
+    padding: 90px 0 0;
 }
+
+.foot-banner {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    gap: clamp(20px, 4vw, 64px);
+    width: 88%;
+    max-width: 1400px;
+    min-height: 78px;
+    padding: 10px 36px;
+    box-sizing: border-box;
+    transform: translate(-50%, -50%);
+    border: 1px solid #c5c6c9;
+    border-radius: 14px;
+    background: #f7f6f7;
+}
+
+.foot-banner-viewport {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex: 1;
+    min-width: 0;
+    height: 36px;
+    overflow: hidden;
+    padding: 0 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 999px;
+    background: #fff;
+}
+
+.foot-banner-viewport::after {
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    background: linear-gradient(to right, #fff 0%, transparent 10%, transparent 90%, #fff 100%);
+    content: "";
+    pointer-events: none;
+}
+
+.foot-banner-track {
+    display: flex;
+    width: max-content;
+    animation: foot-banner-scroll 14s linear infinite;
+    will-change: transform;
+}
+
+.foot-banner-track > span {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 12px;
+    padding-right: 28px;
+    white-space: nowrap;
+}
+
+.foot-banner-track svg {
+    flex-shrink: 0;
+    width: 14px;
+    height: 14px;
+    color: #4c5670;
+}
+
+.foot-banner-copy {
+    background: linear-gradient(100deg, #1745d1 0%, #2876c7 30%, #168e9a 55%, #168a45 80%, #116b36 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: clamp(11px, calc(0.22vw + 10.3px), 13px);
+    font-weight: var(--font-weight-700);
+    letter-spacing: .04em;
+}
+
+.foot-banner .link-btn span {
+    font-size: clamp(13px, calc(0.11vw + 12.65px), var(--font-size-14));
+    font-weight: var(--font-weight-700);
+}
+
+@keyframes foot-banner-scroll {
+    from { transform: translate3d(0, 0, 0); }
+    to { transform: translate3d(-33.333%, 0, 0); }
+}
+
+
+
+/* =========================================================
+   FOOTER — BANNER REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .foot-banner-track {
+        animation: none;
+    }
+}
+
+/* =========================================================
+   FOOTER — DECORATIVE BACKGROUND
+========================================================= */
 
 .foot-background {
     position: absolute;
@@ -8488,6 +8593,10 @@ footer {
     }
 }
 
+/* =========================================================
+   FOOTER — OVERLAY AND CONTENT LAYOUT
+========================================================= */
+
 .foot-overlay {
     position: absolute;
     inset: 0;
@@ -8520,8 +8629,13 @@ footer > .wrap {
     margin: 0 0 50px;
 }
 
+/* =========================================================
+   FOOTER — BRAND AND CONTACT INFORMATION
+========================================================= */
+
 .foot-brand p {
-    font-size: 14px;
+    font-size: clamp(12px, calc(0.22vw + 11.3px), var(--font-size-14));
+    font-weight: var(--font-weight-400);
     color: #E0E6F0;
     line-height: 1.6;
     margin: 16px 0;
@@ -8536,18 +8650,23 @@ footer > .wrap {
 }
 
 .contact-data h3{
-    font-size: 16px;
-    font-weight: 700;
+    font-size: clamp(13px, calc(0.22vw + 12.3px), 15px);
+    font-weight: var(--font-weight-700);
     color: #E0E6F0;
     margin: 0;
     
 }
 .contact-data p{
-    font-size: 14px;
+    font-size: clamp(12px, calc(0.22vw + 11.3px), var(--font-size-14));
+    font-weight: var(--font-weight-400);
     
     line-height: 1.6;
     margin : 8px 0 ;
 }
+
+/* =========================================================
+   FOOTER — NAVIGATION AND SOCIAL LINKS
+========================================================= */
 
 .socials {
     display: flex;
@@ -8556,8 +8675,8 @@ footer > .wrap {
 }
 
 .socials-heading{
-    font-size: 16px;
-    font-weight: 700;
+    font-size: clamp(14px, calc(0.11vw + 13.65px), 15px);
+    font-weight: var(--font-weight-700);
     color: #E0E6F0;
     margin-bottom: 10px;
 }
@@ -8596,8 +8715,8 @@ footer > .wrap {
 }
 
 .foot-col h5 {
-    font-size: 16px;
-    font-weight: 700;
+    font-size: clamp(14px, calc(0.22vw + 13.3px), var(--font-size-16));
+    font-weight: var(--font-weight-700);
     letter-spacing: 0.06em;
     color: #FFFFFF;
     margin-bottom: 16px;
@@ -8608,8 +8727,8 @@ footer > .wrap {
 }
 
 .foot-col a {
-    font-size: 14px;
-    font-weight: 500;
+    font-size: clamp(13px, calc(0.11vw + 12.65px), var(--font-size-14));
+    font-weight: var(--font-weight-500);
     color: #E0E6F0;
     text-decoration: none;
 
@@ -8640,6 +8759,10 @@ footer > .wrap {
     display: block;
 }
 
+/* =========================================================
+   FOOTER — BOTTOM ROW
+========================================================= */
+
 .foot-bottom {
     
     border-top: 1px solid rgba(255, 255, 255, 0.18);
@@ -8669,8 +8792,43 @@ footer > .wrap {
 
     width: 100%;
     padding: 20px 0;
-    font-size: 12px;
+    font-size: clamp(11px, calc(0.11vw + 10.65px), 12px);
+    font-weight: var(--font-weight-400);
     color: #D0D8E6;
+}
+
+/* =========================================================
+   FOOTER — RESPONSIVE BANNER OVERRIDES
+========================================================= */
+
+@media (max-width: 768px) {
+    footer {
+        padding-top: 84px;
+    }
+
+    .foot-banner {
+        width: 88%;
+        min-height: 68px;
+        gap: 12px;
+        padding: 8px 12px;
+        border-radius: 12px;
+    }
+
+    .foot-banner-viewport {
+        height: 34px;
+        padding: 0 8px;
+    }
+
+    .foot-banner-track > span {
+        gap: 8px;
+        padding-right: 18px;
+    }
+
+    .foot-banner-copy {
+        font-size: clamp(11px, calc(0.22vw + 10.3px), 12px);
+    }
+
+
 }
 
 
@@ -8687,8 +8845,7 @@ footer button:focus-visible {
 }
 
 /* =========================================================
-   9. FOOTER — CONTINUED
-   ABOUT FOOTER SUPPORT
+   FOOTER — LEGACY STYLES
 ========================================================= */
 
 .foot-grid {
@@ -15480,7 +15637,7 @@ body.company-video-lightbox-open {
 
     .cert-row { grid-template-columns:repeat(4,1fr); }
 
-    /* Footer */
+    /* FOOTER — RESPONSIVE GRID */
     .foot-top { grid-template-columns:1fr 1fr; }
 
     .foot-grid {
@@ -15682,7 +15839,7 @@ body.company-video-lightbox-open {
 
     
 
-    /* Footer */
+    /* FOOTER — RESPONSIVE DECORATIVE BACKGROUND */
     .foot-background h2 {
         font-size: clamp(80px, 13vw, 145px);
         letter-spacing: 5px;
@@ -16085,7 +16242,7 @@ body.company-video-lightbox-open {
 
     .contact-trust-item p { max-width:100%; }
 
-    /* Footer */
+    /* FOOTER — RESPONSIVE NAVIGATION AND COLUMNS */
     .foot-top { grid-template-columns:1fr;
         gap: 10px; }
 
@@ -16393,7 +16550,7 @@ body.company-video-lightbox-open {
     /* . { padding:26px 20px; } */
     .-grid { gap:20px; }
 
-    /* Footer */
+    /* FOOTER — SMALL-SCREEN FOOTER OVERRIDES */
     .foot-grid { grid-template-columns:1fr; }
 
     .foot-bottom {
