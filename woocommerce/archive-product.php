@@ -232,4 +232,6 @@ get_template_part('components/parallax-hero', null, [
     </div>
 </main>
 
+<?php get_template_part('components/cta'); ?>
+
 <?php get_footer(); ?>

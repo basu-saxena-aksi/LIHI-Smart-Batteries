@@ -10,6 +10,8 @@ get_header();
 
     <?php get_template_part('template-parts/blogs/blog-section'); ?>
 
+    <?php get_template_part('components/cta'); ?>
+
 </main>
 
 <?php get_footer(); ?>

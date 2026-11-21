@@ -10,6 +10,8 @@ get_header();
 
     <?php get_template_part('template-parts/image_gallery/gallery-section'); ?>
 
+    <?php get_template_part('components/cta'); ?>
+
 </main>
 
 <?php get_footer(); ?>

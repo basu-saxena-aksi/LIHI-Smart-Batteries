@@ -12,6 +12,8 @@ get_header();
     <?php get_template_part('template-parts/faq/faq-section'); ?>
     <?php get_template_part('template-parts/faq/faq-form'); ?>
 
+        <?php get_template_part('components/cta'); ?>
+
 </main>
 
 <?php get_footer(); ?>

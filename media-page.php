@@ -8,8 +8,8 @@ get_header();
 ?>
 
 <main class="media-page">
-    
-     <?php get_template_part('template-parts/media/hero'); ?>
+
+    <?php get_template_part('template-parts/media/hero'); ?>
 
     <section class="section media-featured-section">
 
@@ -34,10 +34,8 @@ get_header();
 
                     <div class="media-featured-image">
 
-                        <img
-                            src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?auto=format&fit=crop&w=1200&q=80"
-                            alt="Drone technology"
-                        >
+                        <img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?auto=format&fit=crop&w=1200&q=80"
+                            alt="Drone technology">
 
                         <span class="media-category">
                             FEATURED
@@ -77,10 +75,8 @@ get_header();
 
                         <div class="media-small-image">
 
-                            <img
-                                src="https://images.unsplash.com/photo-1506947411487-a56738267384?auto=format&fit=crop&w=800&q=80"
-                                alt="UAV technology"
-                            >
+                            <img src="https://images.unsplash.com/photo-1506947411487-a56738267384?auto=format&fit=crop&w=800&q=80"
+                                alt="UAV technology">
 
                         </div>
 
@@ -108,10 +104,8 @@ get_header();
 
                         <div class="media-small-image">
 
-                            <img
-                                src="https://images.unsplash.com/photo-1579820010410-c10411aaaa88?auto=format&fit=crop&w=800&q=80"
-                                alt="Drone in flight"
-                            >
+                            <img src="https://images.unsplash.com/photo-1579820010410-c10411aaaa88?auto=format&fit=crop&w=800&q=80"
+                                alt="Drone in flight">
 
                         </div>
 
@@ -189,10 +183,8 @@ get_header();
 
                     <div class="media-card-image">
 
-                        <img
-                            src="https://images.unsplash.com/photo-1527977966376-1c8408f9f108?auto=format&fit=crop&w=900&q=80"
-                            alt="Drone flying outdoors"
-                        >
+                        <img src="https://images.unsplash.com/photo-1527977966376-1c8408f9f108?auto=format&fit=crop&w=900&q=80"
+                            alt="Drone flying outdoors">
 
                         <span class="media-card-category">
                             NEWS
@@ -229,10 +221,8 @@ get_header();
 
                     <div class="media-card-image">
 
-                        <img
-                            src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?auto=format&fit=crop&w=900&q=80"
-                            alt="Commercial drone"
-                        >
+                        <img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?auto=format&fit=crop&w=900&q=80"
+                            alt="Commercial drone">
 
                         <span class="media-card-category">
                             EVENT
@@ -269,10 +259,8 @@ get_header();
 
                     <div class="media-card-image">
 
-                        <img
-                            src="https://images.unsplash.com/photo-1506947411487-a56738267384?auto=format&fit=crop&w=900&q=80"
-                            alt="UAV technology"
-                        >
+                        <img src="https://images.unsplash.com/photo-1506947411487-a56738267384?auto=format&fit=crop&w=900&q=80"
+                            alt="UAV technology">
 
                         <span class="media-card-category">
                             PRESS
@@ -309,10 +297,8 @@ get_header();
 
                     <div class="media-card-image">
 
-                        <img
-                            src="https://images.unsplash.com/photo-1579820010410-c10411aaaa88?auto=format&fit=crop&w=900&q=80"
-                            alt="Drone flying"
-                        >
+                        <img src="https://images.unsplash.com/photo-1579820010410-c10411aaaa88?auto=format&fit=crop&w=900&q=80"
+                            alt="Drone flying">
 
                         <span class="media-card-category">
                             NEWS
@@ -349,10 +335,8 @@ get_header();
 
                     <div class="media-card-image">
 
-                        <img
-                            src="https://images.unsplash.com/photo-1559825481-12a05cc00344?auto=format&fit=crop&w=900&q=80"
-                            alt="Technology event"
-                        >
+                        <img src="https://images.unsplash.com/photo-1559825481-12a05cc00344?auto=format&fit=crop&w=900&q=80"
+                            alt="Technology event">
 
                         <span class="media-card-category">
                             EVENT
@@ -389,10 +373,8 @@ get_header();
 
                     <div class="media-card-image">
 
-                        <img
-                            src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80"
-                            alt="Technology workspace"
-                        >
+                        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80"
+                            alt="Technology workspace">
 
                         <span class="media-card-category">
                             NEWS
@@ -465,5 +447,7 @@ get_header();
     </section>
 
 </main>
+
+<?php get_template_part('components/cta'); ?>
 
 <?php get_footer(); ?>

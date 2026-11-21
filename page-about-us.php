@@ -22,7 +22,7 @@ get_header();
 
         <?php get_template_part('template-parts/about/faq'); ?>
 
-        <?php get_template_part('template-parts/about/cta'); ?>
+        <?php get_template_part('components/cta'); ?>
     </div>
 </main>
 
