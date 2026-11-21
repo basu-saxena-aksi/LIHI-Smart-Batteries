@@ -23,61 +23,156 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /* =====================================================
-       PAGE ENTERING
+       HELPERS
     ===================================================== */
 
-    if (html.classList.contains('is-transition-entering')) {
+    // Detect the WordPress homepage.
+    const isHomePage =
+        document.body.classList.contains('home') ||
+        document.body.classList.contains('front-page');
 
-        
+
+    // Get the homepage URL from WordPress/theme markup.
+    const getHomeUrl = () => {
+
+        const homeLink =
+            document.querySelector('link[rel="home"]') ||
+            document.querySelector('.custom-logo-link');
+
+        return homeLink
+            ? new URL(homeLink.href, window.location.href)
+            : new URL('/', window.location.origin);
+
+    };
 
 
-        let revealed = false;
+    // Check whether the destination is the homepage.
+    const isHomeDestination = (destination) => {
 
-        const finishEntering = () => {
+        const homeUrl = getHomeUrl();
 
-            if (revealed) return;
+        const normalizePath = (path) =>
+            path.replace(/\/+$/, '') || '/';
 
-            revealed = true;
+        return (
+            destination.origin === homeUrl.origin &&
+            normalizePath(destination.pathname) ===
+            normalizePath(homeUrl.pathname)
+        );
 
-            requestAnimationFrame(() => {
+    };
+
+
+    // Clear transition states and reset the curtain.
+    const resetTransition = () => {
+
+        html.classList.remove(
+            'is-transition-entering',
+            'is-transition-ready',
+            'is-transition-complete',
+            'is-transition-preparing',
+            'is-transition-leaving'
+        );
+
+        overlay.style.setProperty('transition', 'none');
+
+        overlay.style.setProperty(
+            'transform',
+            'translate3d(0, 100%, 0)'
+        );
+
+        overlay.offsetHeight;
+
+        overlay.style.removeProperty('transition');
+        overlay.style.removeProperty('transform');
+
+    };
+
+
+    // Clear stored transition information.
+    const clearTransitionStorage = () => {
+
+        try {
+
+            sessionStorage.removeItem('lihi-page-transition');
+            sessionStorage.removeItem('lihi-page-title');
+
+        } catch (error) {}
+
+    };
+
+
+    /* =====================================================
+       HOMEPAGE — SKIP PAGE ENTERING CURTAIN
+    ===================================================== */
+
+    if (isHomePage) {
+
+        resetTransition();
+        clearTransitionStorage();
+
+        if (transitionTitle) {
+            transitionTitle.textContent = '';
+        }
+
+    } else {
+
+
+        /* =================================================
+           PAGE ENTERING
+        ================================================= */
+
+        if (html.classList.contains('is-transition-entering')) {
+
+            let revealed = false;
+
+            const finishEntering = () => {
+
+                if (revealed) return;
+
+                revealed = true;
 
                 requestAnimationFrame(() => {
 
-                    html.classList.add('is-transition-ready');
+                    requestAnimationFrame(() => {
 
-                    window.setTimeout(() => {
+                        html.classList.add('is-transition-ready');
 
-                        html.classList.remove(
-                            'is-transition-entering',
-                            'is-transition-ready'
-                        );
+                        window.setTimeout(() => {
 
-                        html.classList.add(
-                            'is-transition-complete'
-                        );
+                            html.classList.remove(
+                                'is-transition-entering',
+                                'is-transition-ready'
+                            );
 
-                    }, transitionDuration + 100);
+                            html.classList.add(
+                                'is-transition-complete'
+                            );
+
+                        }, transitionDuration + 100);
+
+                    });
 
                 });
 
-            });
-
-        };
+            };
 
 
-        if (document.readyState === 'complete') {
+            if (document.readyState === 'complete') {
 
-            finishEntering();
+                finishEntering();
 
-        } else {
+            } else {
 
-            window.addEventListener(
-                'load',
-                finishEntering,
-                { once: true }
-            );
+                window.addEventListener(
+                    'load',
+                    finishEntering,
+                    { once: true }
+                );
 
-            window.setTimeout(finishEntering, 2500);
+                window.setTimeout(finishEntering, 2500);
+
+            }
 
         }
 
@@ -167,14 +262,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (navigating) return;
 
+
+        // Skip the curtain when navigating TO the homepage.
+        // The homepage has its own preloader animation.
+        if (isHomeDestination(destination)) {
+            return;
+        }
+
+
         navigating = true;
 
         event.preventDefault();
 
 
-        let nextPageTitle = '';
+        /* ================================================
+           GET DESTINATION PAGE TITLE
+        ================================================ */
 
-        /* INDUSTRY & APPLICATION CARDS */
+        let nextPageTitle = '';
 
         const cardTitle = link.querySelector(
             '.industry-card h3, .application-card h3'
@@ -215,6 +320,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
 
+        /* ================================================
+           STORE TRANSITION INFORMATION
+        ================================================ */
+
         try {
 
             sessionStorage.setItem(
@@ -229,6 +338,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         } catch (error) {}
 
+
+        /* ================================================
+           START LEAVING ANIMATION
+        ================================================ */
 
         html.classList.remove(
             'is-transition-complete',
@@ -260,7 +373,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, transitionDuration);
 
     }, true);
-    
+
 });
 
 
@@ -288,7 +401,7 @@ window.addEventListener('pageshow', function (event) {
     if (!overlay) return;
 
 
-    // Remove all previous transition states.
+    // Remove previous transition states.
     html.classList.remove(
         'is-transition-entering',
         'is-transition-ready',
@@ -298,7 +411,7 @@ window.addEventListener('pageshow', function (event) {
     );
 
 
-    // Clear any previous navigation data.
+    // Clear previous navigation data.
     try {
 
         sessionStorage.removeItem('lihi-page-transition');
@@ -307,17 +420,16 @@ window.addEventListener('pageshow', function (event) {
     } catch (error) {}
 
 
-    // Immediately reset the curtain below the screen.
+    // Reset the curtain.
     overlay.style.setProperty('transition', 'none');
+
     overlay.style.setProperty(
         'transform',
         'translate3d(0, 100%, 0)'
     );
 
-    // Force the browser to apply the reset.
     overlay.offsetHeight;
 
-    // Return control to the original stylesheet.
     overlay.style.removeProperty('transition');
     overlay.style.removeProperty('transform');
 
@@ -332,4 +444,3 @@ window.addEventListener('pageshow', function (event) {
     }
 
 });
-

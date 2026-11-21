@@ -136,6 +136,17 @@ add_filter('wp_calculate_image_srcset', function ($sources) {
     return $sources;
 });
 
+// font 
+function lihi_enqueue_transition_font()
+{
+    wp_enqueue_style(
+        'lihi-playfair-font',
+        'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap',
+        [],
+        null
+    );
+}
+add_action('wp_enqueue_scripts', 'lihi_enqueue_transition_font');
 
 /* =========================================================
    FAQ ACCORDION SCRIPT

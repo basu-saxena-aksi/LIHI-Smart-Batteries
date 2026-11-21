@@ -792,7 +792,7 @@ html.is-transition-leaving .page-transition-overlay {
 }
 
 /* =========================================================
-   PAGE TRANSITION TITLE
+   PAGE TRANSITION TITLE — MINIMAL BOLD
 ========================================================= */
 
 .page-transition-title {
@@ -800,18 +800,28 @@ html.is-transition-leaving .page-transition-overlay {
     top: 50%;
     left: 50%;
 
-    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(10px, 1.5vw, 20px);
+
+    width: fit-content;
+    max-width: calc(100vw - 40px);
+    padding: 0;
+
+    box-sizing: border-box;
     text-align: center;
 
     color: var(--navy);
-
-    font-size: clamp(16px, 2.5vw, 24px);
-    font-weight: 600;
-    letter-spacing: .08em;
-    line-height: 1.1;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(21px, 3vw, 35px);
+    font-weight: 700;
+    letter-spacing: .015em;
+    line-height: 1.2;
     text-transform: uppercase;
 
     opacity: 0;
+
     transform: translate(-50%, calc(-50% + 20px));
 
     transition:
@@ -821,7 +831,36 @@ html.is-transition-leaving .page-transition-overlay {
     pointer-events: none;
 }
 
-/* Show title while curtain covers the screen */
+/* Blue and green accent lines */
+
+.page-transition-title::before,
+.page-transition-title::after {
+    content: "";
+    display: block;
+
+    flex: 0 0 clamp(45px, 8vw, 110px);
+    width: clamp(45px, 8vw, 110px);
+
+    height: 2px;
+}
+
+.page-transition-title::before {
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #2350DB
+    );
+}
+
+.page-transition-title::after {
+    background: linear-gradient(
+        90deg,
+        #59BC44,
+        transparent
+    );
+}
+
+/* Show title during transition */
 
 html.is-transition-leaving .page-transition-title,
 html.is-transition-entering .page-transition-title {
@@ -836,6 +875,23 @@ html.is-transition-entering.is-transition-ready
     opacity: 1;
 }
 
+/* Mobile */
+
+@media (max-width: 640px) {
+    .page-transition-title {
+        max-width: calc(100vw - 32px);
+        gap: 10px;
+
+        font-size: clamp(17px, 4.5vw, 23px);
+        letter-spacing: .035em;
+    }
+
+    .page-transition-title::before,
+    .page-transition-title::after {
+        flex-basis: 45px;
+        width: 45px;
+    }
+}
 
 
 .grid-wrapper {
