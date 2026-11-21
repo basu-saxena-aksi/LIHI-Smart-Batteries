@@ -3,6 +3,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const sidebar = document.querySelector('.archive-filters');
     if (!sidebar) return;
 
+    const openButton = document.querySelector('.archive-filter-open');
+    const closeButton = sidebar.querySelector('.archive-filter-close');
+    const applyButton = sidebar.querySelector('.archive-filter-apply');
+    const backdrop = document.querySelector('.archive-filter-backdrop');
+
     const fixedOpenFilters = new Set(['application']);
 
     const normalize = text =>
@@ -38,7 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!button || !content) return;
 
-        // Application must always stay open.
         if (isFixedOpen(section)) {
             expanded = true;
         }
@@ -91,7 +95,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 title.replaceChildren(button);
             }
 
-            // Hide dropdown arrow for Application.
             section.classList.toggle(
                 'lihi-filter-always-open',
                 alwaysOpen
@@ -134,6 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Collapsible filter sections.
     sidebar.addEventListener('click', event => {
         const button = event.target.closest('.archive-filter-toggle');
 
@@ -144,7 +148,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const section = button.closest('.wpc-filters-section');
         if (!section) return;
 
-        // Prevent Application from collapsing.
         if (isFixedOpen(section)) return;
 
         const expanded =
@@ -155,10 +158,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     initializeFilters();
 
-    // Handle Filter Everything AJAX updates.
+    // Reinitialize custom headings after Filter Everything AJAX updates.
     let scheduled = false;
 
-    const observer = new MutationObserver(() => {
+    const filterObserver = new MutationObserver(() => {
         if (scheduled) return;
 
         scheduled = true;
@@ -169,8 +172,144 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    observer.observe(sidebar, {
+    filterObserver.observe(sidebar, {
         childList: true,
         subtree: true
     });
+
+    // Drawer open and close.
+    function openDrawer() {
+        if (!openButton || !backdrop) return;
+
+        sidebar.classList.add('is-open');
+        backdrop.classList.add('is-visible');
+        document.body.classList.add('lihi-filter-drawer-open');
+
+        openButton.setAttribute('aria-expanded', 'true');
+
+        if (closeButton) {
+            closeButton.focus();
+        }
+    }
+
+    function closeDrawer() {
+        if (!openButton || !backdrop) return;
+
+        sidebar.classList.remove('is-open');
+        backdrop.classList.remove('is-visible');
+        document.body.classList.remove('lihi-filter-drawer-open');
+
+        openButton.setAttribute('aria-expanded', 'false');
+        openButton.focus();
+    }
+
+    if (openButton) {
+        openButton.addEventListener('click', openDrawer);
+    }
+
+    if (closeButton) {
+        closeButton.addEventListener('click', closeDrawer);
+    }
+
+    if (applyButton) {
+        applyButton.addEventListener('click', closeDrawer);
+    }
+
+    if (backdrop) {
+        backdrop.addEventListener('click', closeDrawer);
+    }
+
+    document.addEventListener('keydown', event => {
+        if (
+            event.key === 'Escape' &&
+            sidebar.classList.contains('is-open')
+        ) {
+            closeDrawer();
+        }
+    });
+
+    // Close the drawer if the viewport returns to desktop width.
+    const desktopQuery = window.matchMedia('(min-width: 1025px)');
+
+    desktopQuery.addEventListener('change', event => {
+        if (event.matches) {
+            sidebar.classList.remove('is-open');
+
+            if (backdrop) {
+                backdrop.classList.remove('is-visible');
+            }
+
+            document.body.classList.remove('lihi-filter-drawer-open');
+
+            if (openButton) {
+                openButton.setAttribute('aria-expanded', 'false');
+            }
+        }
+    });
+
+    // Custom Reset All — remove filters through the plugin's AJAX chip action.
+    const resetButton = sidebar.querySelector('.archive-custom-reset');
+
+    if (resetButton) {
+        let isResetting = false;
+
+        const getActiveChips = () =>
+            Array.from(
+                sidebar.querySelectorAll(
+                    '.wpc-filter-chip:not(.wpc-chip-reset-all) [data-wpc-span-link]'
+                )
+            );
+
+        function waitForChipRemoval(previousCount) {
+            return new Promise(resolve => {
+                const observer = new MutationObserver(() => {
+                    if (getActiveChips().length < previousCount) {
+                        observer.disconnect();
+                        clearTimeout(timeout);
+                        resolve(true);
+                    }
+                });
+
+                observer.observe(sidebar, {
+                    childList: true,
+                    subtree: true
+                });
+
+                const timeout = setTimeout(() => {
+                    observer.disconnect();
+                    resolve(false);
+                }, 5000);
+            });
+        }
+
+        resetButton.addEventListener('click', async event => {
+            event.preventDefault();
+            event.stopImmediatePropagation();
+
+            if (isResetting) return;
+
+            isResetting = true;
+            resetButton.style.pointerEvents = 'none';
+
+            try {
+                while (true) {
+                    const chips = getActiveChips();
+
+                    if (!chips.length) break;
+
+                    const previousCount = chips.length;
+                    const removal = waitForChipRemoval(previousCount);
+
+                    chips[0].click();
+
+                    const removed = await removal;
+
+                    if (!removed) break;
+                }
+            } finally {
+                isResetting = false;
+                resetButton.style.pointerEvents = '';
+            }
+        });
+    }
 });

@@ -56,6 +56,7 @@ Version: 1.0
     --gutter:40px;        /* page side padding, reduced per breakpoint */
     --faq-sticky-top: 85px;
 
+    --font-size-12:12px;
     --font-size-14:14px;
     --font-size-16:16px;
     --font-size-18:18px;
@@ -325,7 +326,7 @@ ul {
 ========================================================= */
 
 .link-btn {
-     position: relative;
+    position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -5215,7 +5216,7 @@ header {
     display: inline-block;
     margin-bottom: 16px;
     color: var(--blue);
-    font-size: 10px;
+    font-size: var(--font-size-12);
     font-weight: 750;
     letter-spacing: 1.8px;
 }
@@ -5291,7 +5292,7 @@ header {
 .story .tlabel {
     margin-bottom: 12px;
     color: var(--blue);
-    font-size: 9px;
+    font-size: var(--font-size-12);
     font-weight: 750;
     letter-spacing: 1.1px;
 }
@@ -6317,7 +6318,7 @@ header {
     gap: 12px;
     margin-bottom: 18px;
     color: var(--blue);
-    font-size: 11px;
+    font-size: var(--font-size-12);
     font-weight: 750;
     letter-spacing: 1.8px;
 }
@@ -6463,7 +6464,7 @@ header {
     display: inline-block;
     margin-bottom: 9px;
     color: var(--blue);
-    font-size: 9px;
+    font-size: 11px;
     font-weight: 750;
     letter-spacing: 1.3px;
 }
@@ -12548,7 +12549,7 @@ body.tax-product_cat .about-hero .scroll-indicator {
 .archive-layout {
     display: grid;
     
-    grid-template-columns: 240px 1fr;
+    grid-template-columns: 280px 1fr;
     gap: 50px;
     align-items: start;
 }
@@ -12724,33 +12725,275 @@ body.tax-product_cat .about-hero .scroll-indicator {
 }
 
 
+
+
 /* =========================================================
    PRODUCTS ARCHIVE — FILTER SIDEBAR & FILTER STATES
 ========================================================= */
 
+/* 1. SIDEBAR CARD */
+
 .archive-filters {
-    padding: 24px 20px;
-    background: #f5f5f5;
-    border: 1px solid #dce4ef;
-    
+    position: relative;
+    min-width: 0;
+    padding: 22px;
+    background: #fff;
+    border: 1px solid #e3e9f2;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(11, 36, 71, .07);
 }
 
+/* 2. FILTER HEADER & CUSTOM RESET */
+
+.archive-filters-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #edf1f7;
+}
+
+.archive-filters .archive-filters-title {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    color: var(--navy);
+    font-size: 18px;
+    font-weight: var(--font-weight-700);
+    line-height: 1.3;
+}
+
+.archive-filters-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.archive-filters .archive-custom-reset {
+    flex-shrink: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--blue);
+    font-size: 12px;
+    font-weight: var(--font-weight-600);
+    line-height: 1.3;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.archive-filters .archive-custom-reset:hover {
+    text-decoration: underline;
+}
+
+.archive-filter-close {
+    display: none;
+    flex: 0 0 32px;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: #eef3fb;
+    color: var(--navy);
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+/* 3. SELECTED FILTER CHIPS */
+
+.archive-filters .wpc-inner-widget-chips-wrapper {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.archive-filters .wpc-filter-chips-list {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+    width: 100%;
+    margin: 0;
+    padding: 10px 0;
+    list-style: none;
+    border-bottom: 1px solid #edf1f7;
+}
+
+.archive-filters .wpc-filter-chips-list br {
+    display: none;
+}
+
+.archive-filters .wpc-filter-chip.wpc-chip-reset-all {
+    display: none !important;
+}
+
+.archive-filters .wpc-filter-chip {
+    display: inline-flex !important;
+    flex: 0 1 auto !important;
+    width: auto !important;
+    max-width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    border-radius: 999px;
+    background: #eef3fb !important;
+    box-shadow: none !important;
+    transition: background .2s ease;
+}
+
+.archive-filters .wpc-filter-chip:hover {
+    background: #e4edfb !important;
+}
+
+.archive-filters .wpc-filter-chip .wpc-chip-content {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 7px;
+    color: var(--navy);
+    font-size: 11px;
+    font-weight: var(--font-weight-500);
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+.archive-filters .wpc-filter-chip .wpc-filter-chip-name {
+    margin: 0;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.archive-filters .wpc-filter-chip .wpc-chip-remove-icon {
+    position: relative;
+    display: inline-block;
+    flex: 0 0 8px;
+    width: 8px;
+    height: 8px;
+    margin: 0;
+    font-size: 0;
+    line-height: 0;
+}
+
+.archive-filters .wpc-filter-chip .wpc-chip-remove-icon > * {
+    display: none;
+}
+
+.archive-filters .wpc-filter-chip .wpc-chip-remove-icon::before,
+.archive-filters .wpc-filter-chip .wpc-chip-remove-icon::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 8px;
+    height: 1.4px;
+    margin-top: -.7px;
+    border-radius: 2px;
+    background: currentColor;
+}
+
+.archive-filters .wpc-filter-chip .wpc-chip-remove-icon::before {
+    transform: rotate(45deg);
+}
+
+.archive-filters .wpc-filter-chip .wpc-chip-remove-icon::after {
+    transform: rotate(-45deg);
+}
+
+.archive-filters .wpc-filter-chips-list.wpc-empty-chips-container {
+    display: none !important;
+}
+
+/* 4. FILTER SECTION HEADINGS */
+
 .archive-filters .wpc-filters-section {
-    margin: 0 0 22px;
-    border-bottom: 1px solid #e9edf4;
+    margin: 0;
+    padding: 18px 0;
+    border-bottom: 1px solid #edf1f7;
 }
 
 .archive-filters .wpc-filters-section:last-child {
+    padding-bottom: 0;
     border-bottom: none;
 }
 
 .archive-filters .wpc-filter-title {
-    margin: 0 0 16px;
+    margin: 0;
     color: var(--navy);
-    font-size: var(--font-size-14);
+    font-size: 14px;
     font-weight: var(--font-weight-700);
-    line-height: 1.5;
+    letter-spacing: .07em;
+    line-height: 1.4;
+    text-transform: uppercase;
 }
+
+/* 5. COLLAPSIBLE FILTER HEADINGS */
+
+.archive-filters .archive-filter-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+    padding-left: 8px;
+    border: 0;
+    background: transparent;
+    color: var(--navy);
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+.archive-filters .archive-filter-arrow {
+    position: relative;
+    flex: 0 0 26px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #eef3fb;
+    color: var(--navy);
+    transition: background .25s ease, color .25s ease;
+}
+
+.archive-filters .archive-filter-arrow::before,
+.archive-filters .archive-filter-arrow::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 2px;
+    margin: -1px 0 0 -5px;
+    border-radius: 2px;
+    background: currentColor;
+    transition: transform .3s ease, opacity .3s ease;
+}
+
+.archive-filters .archive-filter-arrow::after {
+    transform: rotate(90deg);
+}
+
+.archive-filters .archive-filter-toggle[aria-expanded="true"] .archive-filter-arrow {
+    background: var(--blue);
+    color: #fff;
+}
+
+.archive-filters .archive-filter-toggle[aria-expanded="true"] .archive-filter-arrow::after {
+    opacity: 0;
+    transform: rotate(90deg) scaleX(.4);
+}
+
+.archive-filters .wpc-filter-content {
+    padding-top: 12px;
+}
+
+/* 6. FILTER OPTIONS */
 
 .archive-filters .wpc-filters-ul-list {
     margin: 0;
@@ -12759,189 +13002,283 @@ body.tax-product_cat .about-hero .scroll-indicator {
 }
 
 .archive-filters .wpc-filters-ul-list li {
-    margin-bottom: 12px;
+    margin: 0 0 2px;
 }
 
-.archive-filters .wpc-filters-ul-list a,
-.archive-filters .wpc-filters-ul-list label {
+.archive-filters .wpc-filters-ul-list .wpc-term-item-content-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    padding: 8px 10px;
+    border-radius: 6px;
+    transition: background .2s ease;
+}
+
+.archive-filters .wpc-filters-ul-list .wpc-term-selected > .wpc-term-item-content-wrapper {
+    background: #eaf1fd;
+}
+
+.archive-filters .wpc-filters-ul-list .wpc-term-item-content-wrapper:hover {
+    background: #f3f7fd;
+}
+
+/* 7. FILTER OPTION LABELS */
+
+.archive-filters .wpc-filters-ul-list label,
+.archive-filters .wpc-filters-ul-list a {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 0;
     color: #253550;
-    font-size: 13px;
+    font-size: 13.5px;
     font-weight: var(--font-weight-500);
-    line-height: 1.5;
+    line-height: 1.4;
+    text-decoration: none;
     cursor: pointer;
     transition: color .2s ease;
 }
 
-.archive-filters .wpc-filters-ul-list a:hover,
-.archive-filters .wpc-filters-ul-list label:hover {
+.archive-filters .wpc-filters-ul-list .wpc-term-item-content-wrapper:hover label,
+.archive-filters .wpc-filters-ul-list .wpc-term-item-content-wrapper:hover a {
     color: var(--blue);
 }
+
+/* 8. CHECKBOXES */
 
 .archive-filters input[type="checkbox"] {
-    width: 15px;
-    height: 15px;
-    margin-right: 8px;
-    accent-color: var(--blue);
+    appearance: none;
+    -webkit-appearance: none;
+    display: grid;
+    place-content: center;
+    flex: 0 0 18px;
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    border: 1.5px solid #b6c2d6;
+    border-radius: 5px;
+    background: #fff;
     cursor: pointer;
-    vertical-align: middle;
+    transition: background .2s ease, border-color .2s ease;
 }
+
+.archive-filters input[type="checkbox"]:checked {
+    border-color: var(--blue);
+    background: var(--blue);
+}
+
+.archive-filters input[type="checkbox"]:checked::after {
+    content: "";
+    width: 9px;
+    height: 5px;
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    transform: translateY(-1px) rotate(-45deg);
+}
+
+/* 9. FILTER RESULT COUNTS */
 
 .archive-filters .wpc-term-count {
+    margin-left: auto;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: #eef2f8;
     color: #52627e;
-    font-size: 12px;
+    font-size: 11.5px;
     font-weight: var(--font-weight-600);
 }
 
-.archive-filters .wpc-term-selected a,
-.archive-filters .wpc-term-selected label {
+/* 10. SELECTED FILTER OPTIONS */
+
+.archive-filters .wpc-filters-ul-list .wpc-term-selected label,
+.archive-filters .wpc-filters-ul-list .wpc-term-selected a {
     color: var(--blue);
     font-weight: var(--font-weight-600);
 }
 
-.archive-filters .wpc-filter-reset-link {
-    color: var(--blue);
-    font-size: 12px;
-    font-weight: var(--font-weight-600);
-    text-decoration: none;
-}
+/* 11. FILTER COLLAPSE STATES */
 
-/* =========================================================
-   FILTER DROPDOWNS
-========================================================= */
-
-.archive-filters .archive-filter-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    width: 100%;
-    padding: 0;
-    border: 0;
-    background: transparent;
-    color: var(--navy);
-    font: inherit;
-    font-size: var(--font-size-14);
-    font-weight: var(--font-weight-700);
-    text-align: left;
-    cursor: pointer;
-}
-
-.archive-filters .archive-filter-arrow {
-     position: relative;
-    width: 24px;
-    height: 24px;
-    flex: 0 0 24px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    color: var(--navy);
-}
-
-.archive-filters .archive-filter-arrow::before,
-.archive-filters .archive-filter-arrow::after {
-    content: "";
-    position: absolute;
-
-    width: 15px;
-    height: 1.8px;
-
-    background: currentColor;
-
-    transition:
-        opacity 0.3s ease,
-        transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.archive-filters .archive-filter-arrow::before {
-    transform: rotate(0deg);
-}
-
-/* Vertical line */
-.archive-filters .archive-filter-arrow::after {
-    transform: rotate(90deg);
-}
-
-/* Open — plus changes into minus */
-.archive-filters
-.archive-filter-toggle[aria-expanded="true"] {
-    color: var(--blue);
-}
-
-.archive-filters
-.archive-filter-toggle[aria-expanded="true"]
-.archive-filter-arrow::after {
-    opacity: 0;
-    transform: rotate(90deg) scaleX(0.65);
-}
-
-/* Always-open application filter */
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce) {
-    .archive-filter-toggle,
-    .archive-filter-arrow::before,
-    .archive-filter-arrow::after {
-        transition: none;
-    }
-}
-
-.archive-filters .archive-filter-toggle:focus-visible {
-    outline: 2px solid var(--blue);
-    outline-offset: 4px;
-}
-
-/* Collapsed filter content */
-
-.archive-filters
-.wpc-filters-section.lihi-filter-collapsed
-.wpc-filter-content,
-.archive-filters
-.wpc-filters-section.lihi-filter-collapsed
-.wpc-filter-content-wrapper {
+.archive-filters .wpc-filters-section.lihi-filter-collapsed .wpc-filter-content,
+.archive-filters .wpc-filters-section.lihi-filter-collapsed .wpc-filter-content-wrapper {
     display: none;
 }
 
-/* =========================================================
-   APPLICATION FILTER - ALWAYS EXPANDED
-========================================================= */
-
-.archive-filters
-.wpc-filters-section.lihi-filter-always-open
-.archive-filter-toggle {
+.archive-filters .wpc-filters-section.lihi-filter-always-open .archive-filter-toggle {
     cursor: default;
 }
 
-.archive-filters
-.wpc-filters-section.lihi-filter-always-open
-.archive-filter-arrow {
+.archive-filters .wpc-filters-section.lihi-filter-always-open .archive-filter-arrow {
     display: none;
 }
 
-.archive-filters
-.wpc-filters-section.lihi-filter-always-open
-.wpc-filter-content,
-.archive-filters
-.wpc-filters-section.lihi-filter-always-open
-.wpc-filter-content-wrapper {
+.archive-filters .wpc-filters-section.lihi-filter-always-open .wpc-filter-content,
+.archive-filters .wpc-filters-section.lihi-filter-always-open .wpc-filter-content-wrapper {
     display: block !important;
 }
-
-/* =========================================================
-   CLEAR ALL FILTERS BUTTON
-========================================================= */
-
-.archive-clear-filters {
-    margin-top: 24px;
-}
-
-/* =========================================================
-   HIDE FILTER EVERYTHING EDIT LINK
-========================================================= */
 
 .archive-filters .wpc-edit-filter-set {
     display: none;
 }
+
+/* 12. DESKTOP FILTER TRIGGER & DRAWER CONTROLS */
+
+.archive-filter-open {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    min-height: 44px;
+    padding: 10px 16px;
+    border: 1px solid #e3e9f2;
+    border-radius: 8px;
+    background: #fff;
+    color: var(--navy);
+    font-size: 14px;
+    font-weight: var(--font-weight-600);
+    cursor: pointer;
+}
+
+.archive-filter-backdrop {
+    display: none;
+}
+
+.archive-filter-footer {
+    display: none;
+}
+
+/* 13. ACCESSIBILITY */
+
+.archive-filters .archive-custom-reset:focus-visible,
+.archive-filters .archive-filter-toggle:focus-visible,
+.archive-filters .wpc-filter-chip:focus-visible,
+.archive-filters input[type="checkbox"]:focus-visible,
+.archive-filter-open:focus-visible,
+.archive-filter-close:focus-visible,
+.archive-filter-apply:focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 3px;
+}
+
+/* 14. TABLET & MOBILE FILTER DRAWER */
+
+@media (max-width: 1024px) {
+
+    .archive-filter-open {
+        display: inline-flex;
+        margin-bottom: 18px;
+    }
+
+    .archive-filters {
+        position: fixed;
+        z-index: 1002;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        width: 360px;
+        max-width: 88vw;
+        height: 100dvh;
+        max-height: 100dvh;
+        padding: 22px;
+        overflow: hidden;
+        border: 0;
+        border-radius: 0 16px 16px 0;
+        box-shadow: 10px 0 35px rgba(11, 36, 71, .16);
+        transform: translateX(-105%);
+        visibility: hidden;
+        transition: transform .3s ease, visibility .3s ease;
+    }
+
+    .archive-filters.is-open {
+        transform: translateX(0);
+        visibility: visible;
+    }
+
+    .archive-filters-header {
+        flex: 0 0 auto;
+    }
+
+    .archive-filter-close {
+        display: inline-flex;
+    }
+
+    .archive-filters > .wpc-filters-widget-wrapper,
+    .archive-filters > .wpc-filters-widget,
+    .archive-filters > .wpc-inner-widget-chips-wrapper {
+        flex-shrink: 0;
+    }
+
+    .archive-filters .wpc-filters-widget-wrapper {
+        min-height: 0;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+    }
+
+    .archive-filters .wpc-filters-widget {
+        min-height: 0;
+    }
+
+    .archive-filters .wpc-filters-widget-content {
+        min-height: 0;
+    }
+
+    .archive-filter-footer {
+        display: block;
+        flex: 0 0 auto;
+        margin-top: auto;
+        padding-top: 16px;
+        border-top: 1px solid #edf1f7;
+    }
+
+    .archive-filter-apply {
+        display: block;
+        width: 100%;
+        min-height: 46px;
+        padding: 12px 18px;
+        border: 0;
+        border-radius: 8px;
+        background: var(--blue);
+        color: #fff;
+        font-size: 14px;
+        font-weight: var(--font-weight-600);
+        cursor: pointer;
+    }
+
+    .archive-filter-backdrop {
+        position: fixed;
+        z-index: 1001;
+        inset: 0;
+        display: block;
+        background: rgba(8, 15, 33, .48);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .3s ease, visibility .3s ease;
+    }
+
+    .archive-filter-backdrop.is-visible {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    body.lihi-filter-drawer-open {
+        overflow: hidden;
+    }
+}
+
+/* 15. REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+    .archive-filters *,
+    .archive-filters *::before,
+    .archive-filters *::after,
+    .archive-filter-backdrop {
+        transition: none !important;
+    }
+}
+
 
 /* =========================================================
    PRODUCTS ARCHIVE — PRODUCT GRID & CARDS
@@ -13119,12 +13456,16 @@ body.tax-product_cat .about-hero .scroll-indicator {
 
 .load-more-btn .loader {
     display: none;
-    
-    width: 34px;
+    width: 39px;
     height: 28px;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
     align-items: center;
     justify-content: center;
     gap: 3px;
+    background: transparent;
+    box-shadow: none;
 }
 
 .load-more-btn.loading .loader {
@@ -13150,9 +13491,22 @@ body.tax-product_cat .about-hero .scroll-indicator {
     transform: scaleY(0.05);
 }
 
-.woocommerce .load-more-btn .loader::before {
+.woocommerce .load-more-btn.loading,
+.woocommerce .load-more-btn.loading:hover,
+.woocommerce .load-more-btn.loading:focus,
+.woocommerce .load-more-btn.loading:active {
+    background: none !important;
+    box-shadow: none !important;
+    border-color: transparent !important;
+}
+
+.woocommerce .load-more-btn.loading::before,
+.woocommerce .load-more-btn.loading::after,
+.woocommerce .load-more-btn.loading .loader::before,
+.woocommerce .load-more-btn.loading .loader::after {
     display: none !important;
     content: none !important;
+    animation: none !important;
 }
 
 .load-more-btn .loader .bar2 {
@@ -13185,7 +13539,9 @@ body.tax-product_cat .about-hero .scroll-indicator {
     }
 }
 
-
+.load-more-btn.loading > svg {
+    display: none;
+}
 
 /* Shared industry-card late arrow override */
 .industry-card-arrow {
@@ -15512,10 +15868,6 @@ body.company-video-lightbox-open {
 
     .about-top,
     .tech-grid { grid-template-columns:1fr; }
-
-
-
-
     
     /* .mvv-grid ,  */
     .timeline{ grid-template-columns:repeat(2,1fr); }
@@ -15536,7 +15888,7 @@ body.company-video-lightbox-open {
     /* PRODUCTS ARCHIVE — RESPONSIVE LAYOUT */
 
      .archive-layout {
-        grid-template-columns: 220px 1fr;
+        grid-template-columns: 240px 1fr;
         gap: 28px;
     }
 
@@ -15674,22 +16026,14 @@ body.company-video-lightbox-open {
     /* PRODUCTS ARCHIVE — RESPONSIVE GRID */
 
     .archive-layout {
-        grid-template-columns: 220px minmax(0, 1fr);
-        gap: 24px;
+        display: block;
     }
-
-    .archive-products ul.products {
-        gap: 18px;
-        grid-template-columns: repeat(2, 1fr);
-    }
-
+    
     .archive-products ul.products li.product {
         padding: 18px;
     }
 
 
-
-    
     /* Industries archive grid — late two-column override */
 
     .industries-grid {
@@ -15944,11 +16288,6 @@ body.company-video-lightbox-open {
     /* PRODUCTS ARCHIVE — RESPONSIVE LAYOUT */
     .lihi-product-archive {
         padding: 40px 0 ;
-    }
-
-    .archive-layout {
-        grid-template-columns: 1fr;
-        gap: 28px;
     }
 
     .archive-header {
@@ -16249,6 +16588,10 @@ body.company-video-lightbox-open {
         grid-template-columns: 1fr;
         justify-items: center;
         gap: 16px;
+    }
+
+    .archive-products ul.products {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .woocommerce .archive-products ul.products li.product,

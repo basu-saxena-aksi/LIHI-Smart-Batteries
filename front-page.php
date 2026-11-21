@@ -7,10 +7,6 @@ get_template_part('components/home-preloader');
 
     <?php get_template_part('template-parts/home/hero-top'); ?>
 
-    <!-- <?php get_template_part('template-parts/home/hero'); ?> -->
-
-    <!-- <?php get_template_part('template-parts/home/industries'); ?> -->
-
     <?php get_template_part('template-parts/home/home-industries'); ?>
 
     <?php get_template_part('template-parts/home/carousel'); ?>
