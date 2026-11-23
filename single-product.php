@@ -272,8 +272,8 @@ if (have_posts()):
         <main class="lp-page">
 
             <!-- =========================================
-         PRODUCT HERO
-    ========================================== -->
+                PRODUCT HERO
+            ========================================== -->
 
             <section class="lp-hero">
 
@@ -283,8 +283,8 @@ if (have_posts()):
 
 
                         <!-- =================================
-                     LEFT: PRODUCT GALLERY
-                ================================== -->
+                            LEFT: PRODUCT GALLERY
+                        ================================== -->
 
                         <div class="lp-image-column">
 
@@ -422,8 +422,8 @@ if (have_posts()):
 
 
                         <!-- =================================
-                     RIGHT: PRODUCT INFORMATION
-                ================================== -->
+                            RIGHT: PRODUCT INFORMATION
+                        ================================== -->
 
                         <div class="lp-info">
 
@@ -446,31 +446,69 @@ if (have_posts()):
                             <?php endif; ?>
 
 
-                            <!-- QUICK SPECS -->
+                            <?php
+                            $connectors = [
+                                [
+                                    'name'  => 'AS-120U',
+                                    'image' => 'https://cdn.shopify.com/s/files/1/0724/9497/3222/files/image-swatches-1_1_1695953823763-1695954897.jpg?v=1695954899&width=200&height=200',
+                                ],
+                                [
+                                    'name'  => 'AS-150',
+                                    'image' => 'https://cdn.shopify.com/s/files/1/0724/9497/3222/files/image-swatches-1_2_1695953950520-1695955076.jpg?v=1695955077&width=200&height=200',
+                                ],
+                                [
+                                    'name'  => 'AS-150U',
+                                    'image' => 'https://cdn.shopify.com/s/files/1/0724/9497/3222/files/image-swatches-1_3_1695953963527-1695955082.jpg?v=1695955084&width=200&height=200',
+                                ],
+                                [
+                                    'name'  => 'XT-30',
+                                    'image' => 'https://cdn.shopify.com/s/files/1/0724/9497/3222/files/image-swatches-1_4_1695954422558-1695955091.jpg?v=1695955093&width=200&height=200',
+                                ],
+                                [
+                                    'name'  => 'XT-60',
+                                    'image' => 'https://cdn.shopify.com/s/files/1/0724/9497/3222/files/image-swatches-1_5_1695954424391-1695955097.jpg?v=1695955098&width=200&height=200',
+                                ],
+                                [
+                                    'name'  => 'XT-90S',
+                                    'image' => 'https://cdn.shopify.com/s/files/1/0724/9497/3222/files/image-swatches-1_6_1695954426031-1695955105.jpg?v=1695955107&width=200&height=200',
+                                ],
+                            ];
+                            ?>
 
-                            <?php if ($quick_specs): ?>
+                            <div class="lp-hero-connectors">
 
-                                    <div class="lp-hero-specs">
+                                <div class="lp-hero-connectors-grid">
 
-                                        <?php foreach ($quick_specs as $spec): ?>
+                                    <?php foreach ($connectors as $index => $connector): ?>
 
-                                                <div class="lp-hero-spec">
+                                        <label class="lp-hero-connector">
 
-                                                    <span>
-                                                        <?php echo esc_html($spec['label']); ?>
-                                                    </span>
+                                            <input
+                                                type="radio"
+                                                name="connector_type"
+                                                value="<?php echo esc_attr($connector['name']); ?>"
+                                                <?php checked($index, 0); ?>
+                                            >
 
-                                                    <strong>
-                                                        <?php echo esc_html($spec['value']); ?>
-                                                    </strong>
+                                            <span class="lp-hero-connector-image">
+                                                <img
+                                                    src="<?php echo esc_url($connector['image']); ?>"
+                                                    alt="<?php echo esc_attr($connector['name']); ?>"
+                                                    loading="lazy"
+                                                >
+                                            </span>
 
-                                                </div>
+                                            <!-- <strong>
+                                                <?php echo esc_html($connector['name']); ?>
+                                            </strong> -->
 
-                                        <?php endforeach; ?>
+                                        </label>
 
-                                    </div>
+                                    <?php endforeach; ?>
 
-                            <?php endif; ?>
+                                </div>
+
+                            </div>
 
 
                             <!-- PRICE -->
@@ -633,8 +671,8 @@ if (have_posts()):
 
 
             <!-- =========================================
-         RELATED SECTIONS
-    ========================================== -->
+                RELATED SECTIONS
+            ========================================== -->
 
             <?php get_template_part('components/related_products'); ?>
 
@@ -643,8 +681,8 @@ if (have_posts()):
 
 
             <!-- =========================================
-         IMAGE LIGHTBOX
-    ========================================== -->
+                IMAGE LIGHTBOX
+            ========================================== -->
 
             <div class="lp-lightbox" id="lp-lightbox" hidden>
 
