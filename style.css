@@ -10082,7 +10082,7 @@ label { font-size:var(--font-size-14); }
 .industry-card h3 {
     margin: 0 0 12px;
     color: var(--navy);
-    font-size: 21px;
+    font-size: clamp(18px, 1.8vw, 22px) ;
     font-weight: var(--font-weight-600);
     line-height: 1.3;
     letter-spacing: -.02em;
@@ -10209,7 +10209,7 @@ body.tax-product_cat .about-hero .scroll-indicator {
 
 .archive-header h1 {
     margin: 0;
-    font-size: var(--font-size-40);
+    font-size: clamp(32px, 3.5vw, 40px) ;
     font-weight: 800;
     color: var(--navy);
 }
@@ -10411,7 +10411,7 @@ body.tax-product_cat .about-hero .scroll-indicator {
     padding: 0;
     border: 0;
     color: var(--navy);
-    font-size: 18px;
+    font-size: clamp(16px, 1.25vw, 18px) ;
     font-weight: var(--font-weight-700);
     line-height: 1.3;
 }
@@ -10946,7 +10946,7 @@ body.tax-product_cat .about-hero .scroll-indicator {
 .woocommerce-loop-product__title {
     margin: 0;
     color: var(--navy);
-    font-size: 17px;
+    font-size: clamp(14px, 1.1vw, 16px) ;
     font-weight: 700;
     line-height: 1.4;
 
@@ -15691,10 +15691,6 @@ body.company-video-lightbox-open {
     .industry-card-body {
         padding: 22px;
     }
-
-    .industry-card h3 {
-        font-size: 19px;
-    }
 }
 
 /* Original location: style(6).css line 12258 | (prefers-reduced-motion: reduce) */
@@ -16919,11 +16915,6 @@ body.company-video-lightbox-open {
         grid-template-columns: 240px 1fr;
         gap: 28px;
     }
-
-    .archive-header h1 {
-        font-size: 34px;
-    }
-
     .archive-products ul.products {
         gap: 18px;
         grid-template-columns: repeat(3, 1fr);
@@ -16935,11 +16926,6 @@ body.company-video-lightbox-open {
 
     .archive-products .lihi-archive-product-image-wrap {
         height: 170px;
-    }
-
-    .archive-products .lihi-archive-product-info
-    .woocommerce-loop-product__title {
-        font-size: 15px;
     }
 
     .archive-filters {
@@ -17305,10 +17291,6 @@ body.company-video-lightbox-open {
         margin: 28px 0;
     }
 
-    .archive-header h1 {
-        font-size: 30px;
-    }
-
     .archive-filters {
         width: 100%;
         padding: 20px;
@@ -17578,11 +17560,6 @@ body.company-video-lightbox-open {
         align-items: flex-start;
         gap: 16px;
     }
-
-    .archive-header h1 {
-        font-size: var(--font-size-28);
-    }
-
     .archive-header .btn {
         padding: 11px 18px;
         font-size: 12px;
@@ -17610,10 +17587,6 @@ body.company-video-lightbox-open {
         margin-bottom: 12px;
     }
 
-    .archive-products .lihi-archive-product-info
-    .woocommerce-loop-product__title {
-         font-size: 15px;
-    }
 
     .archive-products .lihi-archive-product-info .price {
         font-size: 14px;
@@ -17832,10 +17805,6 @@ body.company-video-lightbox-open {
         padding: 30px 0 ;
     }
 
-    .archive-header h1 {
-        font-size: 25px;
-    }
-
     .archive-products ul.products {
         gap: 10px;
         grid-template-columns: 1fr;
@@ -17849,10 +17818,6 @@ body.company-video-lightbox-open {
         height: 110px;
     }
 
-    .archive-products .lihi-archive-product-info
-    .woocommerce-loop-product__title {
-        font-size: 12px;
-    }
 
     .archive-products .lihi-archive-product-info .price {
         font-size: 13px;
