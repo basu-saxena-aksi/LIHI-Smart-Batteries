@@ -69,24 +69,31 @@ $video_url = $upload_dir['baseurl'] . '/2026/10/sample_vid.mp4';
         <div class="hero-features">
             <div class="hf-item">
                 <img class="hf-icon"
-                    src="<?php echo esc_url(get_template_directory_uri() . '/images/nuclear-fission.png'); ?>"
+                    src="<?php echo esc_url(get_template_directory_uri() . '/images/high-energy-density.png'); ?>"
                     alt="High Energy Density">
                 <strong>HIGH ENERGY DENSITY</strong><span>More power in less weight</span>
             </div>
             <div class="hf-item">
-
+                <img class="hf-icon" src="<?php echo esc_url(get_template_directory_uri() . '/images/bim.png'); ?>"
+                    alt="High Energy Density">
                 <strong>SMART BMS</strong><span>Intelligent protection and monitoring</span>
             </div>
             <div class="hf-item">
-
+                <img class="hf-icon"
+                    src="<?php echo esc_url(get_template_directory_uri() . '/images/fast-charging.png'); ?>"
+                    alt="High Energy Density">
                 <strong>FAST CHARGING</strong><span>Less downtime, more performance</span>
             </div>
             <div class="hf-item">
-
+                <img class="hf-icon"
+                    src="<?php echo esc_url(get_template_directory_uri() . '/images/safe-&-reliable.png'); ?>"
+                    alt="High Energy Density">
                 <strong>SAFE & RELIABLE</strong><span>Built to last in extreme conditions</span>
             </div>
             <div class="hf-item">
-
+                <img class="hf-icon"
+                    src="<?php echo esc_url(get_template_directory_uri() . '/images/global-compliance.png'); ?>"
+                    alt="High Energy Density">
                 <strong>GLOBAL COMPLIANCE</strong><span>Tested to meet international standards</span>
             </div>
         </div>

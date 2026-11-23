@@ -7,18 +7,18 @@ get_template_part('components/home-preloader');
 
     <?php get_template_part('template-parts/home/hero-top'); ?>
 
+    <?php get_template_part('template-parts/home/features'); ?>
+
     <?php get_template_part('template-parts/home/carousel'); ?>
 
     <?php get_template_part('template-parts/home/home-industries'); ?>
 
     <?php get_template_part('template-parts/home/home-product-carousel'); ?>
 
-    <?php get_template_part('template-parts/home/features'); ?>
 
     <?php get_template_part('template-parts/home/lihi-stats'); ?>
 
     <?php get_template_part('template-parts/home/service-cards'); ?>
-
     <!-- <?php get_template_part('template-parts/home/hover-cards'); ?> -->
 
     <?php get_template_part('components/cta'); ?>

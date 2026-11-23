@@ -74,21 +74,55 @@
                 <div>
                     <div class="contact-data">
                         <h3>Phone</h3>
-                        <p>(+91) 93419 71308</p>
+                        <a href="tel:+919341971308">(+91) 93419 71308</a>
                     </div>
                     <div class="contact-data">
                         <h3>Email</h3>
-                        <p>business@aksiaerospace.com</p>
+                        <a href="mailto:business@aksiaerospace.com">
+                            business@aksiaerospace.com
+                        </a>
                     </div>
                     <div class="contact-data">
                         <h3>Address</h3>
-                        <p>Plot No 5-9-471/3/16P,101 SAI KRISHNA ENCLAVE PH 3 Jawahar Nagar
-                            Tirumalagiri Hyderabad TG 500087 IN</p>
+                        <a href="https://maps.app.goo.gl/D7BH4kQxJa2KigkbA" target="_blank" rel="noopener noreferrer">
+                            Plot No 5-9-471/3/16P, 104 Sai Krishna Enclave PH 3,
+                            Jawahar Nagar, Tirumalagiri, Hyderabad TG 500087
+                        </a>
                     </div>
 
                 </div>
 
             </div>
+
+            <div class="foot-col">
+                <div class="foot-col-header">
+                    <h5>INDUSTRIES</h5>
+
+                    <button type="button" class="foot-dropdown-btn" aria-label="Toggle Industries links"
+                        aria-expanded="false">
+                        <svg viewBox="0 0 10 6" fill="none" aria-hidden="true">
+                            <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+
+                <ul class="foot-dropdown-list">
+                    <li><a class="gradient-link" href="<?php echo esc_url(home_url('/industries/agriculture/')); ?>"
+                            data-text="Agriculture">Agriculture</a></li>
+                    <li><a class="gradient-link"
+                            href="<?php echo esc_url(home_url('/industries/defense-security/')); ?>"
+                            data-text="Defense & Security">Defense & Security</a></li>
+                    <li><a class="gradient-link"
+                            href="<?php echo esc_url(home_url('/industries/logistics-delivery/')); ?>"
+                            data-text="Logistics & Delivery">Logistics & DeliveryDefense</a></li>
+
+                    <li><a class="gradient-link"
+                            href="<?php echo esc_url(home_url('/industries/surveying-mapping/')); ?>"
+                            data-text="Surveying & Mapping">Surveying & Mapping</a></li>
+                </ul>
+            </div>
+
             <div class="foot-col">
 
                 <div class="foot-col-header">
@@ -104,12 +138,15 @@
                 </div>
 
                 <ul class="foot-dropdown-list">
-                    <li><a class="gradient-link" href="#" data-text="About Us">About Us</a></li>
+                    <li><a class="gradient-link" href="<?php echo esc_url(home_url('/about-us/')); ?>"
+                            data-text="About Us">About Us</a></li>
+                    <li><a class="gradient-link" href="#" data-text="Leadership">Leadership</a></li>
                     <li><a class="gradient-link" href="#" data-text="Careers">Careers</a></li>
-                    <li><a class="gradient-link" href="#" data-text="News & Media">News & Media</a></li>
-                    <li><a class="gradient-link" href="#" data-text="Contact Us">Contact Us</a></li>
-                    <li><a class="gradient-link" href="<?php echo esc_url(home_url('/faq/')); ?>"
-                            data-text="Contact Us">Faq</a></li>
+                    <li><a class="gradient-link" href="<?php echo esc_url(home_url('/research-development/')); ?>"
+                            data-text="R&D">R&D</a></li>
+                    <li><a class="gradient-link" href="<?php echo esc_url(home_url('/contact-us/')); ?>"
+                            data-text="Contact Us">Contact Us</a></li>
+
                 </ul>
 
             </div>
@@ -128,17 +165,20 @@
                 </div>
 
                 <ul class="foot-dropdown-list">
-                    <li><a class="gradient-link" href="#" data-text="Smart Batteries">Smart Batteries</a></li>
-                    <li><a class="gradient-link" href="#" data-text="Chargers">Chargers</a></li>
-                    <li><a class="gradient-link" href="#" data-text="Power Modules">Power Modules</a></li>
-                    <li><a class="gradient-link" href="#" data-text="Accessories">Accessories</a></li>
+                    <li><a class="gradient-link" href="<?php echo esc_url(home_url('/product-category/battery/')); ?>"
+                            data-text="Smart Batteries">Smart Batteries</a></li>
+                    <li><a class="gradient-link"
+                            href="<?php echo esc_url(home_url('/product-category/chargers-coming-soon/')); ?>"
+                            data-text="Chargers">Chargers</a></li>
+                    <li><a class="gradient-link" href="<?php echo esc_url(home_url('/custom-battery-request/')); ?>"
+                            data-text="Custom Battery Request">Custom Battery Request</a></li>
                 </ul>
             </div>
 
 
             <div class="foot-col">
                 <div class="foot-col-header">
-                    <h5>INDUSTRIES</h5>
+                    <h5>Quick</h5>
 
                     <button type="button" class="foot-dropdown-btn" aria-label="Toggle Industries links"
                         aria-expanded="false">
@@ -150,34 +190,17 @@
                 </div>
 
                 <ul class="foot-dropdown-list">
-                    <li><a class="gradient-link" href="#" data-text="Agriculture">Agriculture</a></li>
-                    <li><a class="gradient-link" href="#" data-text="Defense">Defense</a></li>
-                    <li><a class="gradient-link" href="#" data-text="Telecom">Telecom</a></li>
-                    <li><a class="gradient-link" href="#" data-text="Logistics">Logistics</a></li>
-                    <li><a class="gradient-link" href="#" data-text="Energy">Energy</a></li>
-                </ul>
-            </div>
+                    <li><a class="gradient-link" href="<?php echo esc_url(home_url('/blog/')); ?>"
+                            data-text="Blogs">Blogs</a></li>
+                    <li><a class="gradient-link" href="<?php echo esc_url(home_url('/image-gallery/')); ?>"
+                            data-text="Image Gallery">Image Gallery</a></li>
+                    <li><a class="gradient-link" href="<?php echo esc_url(home_url('/video-gallery/')); ?>"
+                            data-text="Video Gallery">Video Gallery</a></li>
+                    <li><a class="gradient-link" href="<?php echo esc_url(home_url('/faq/')); ?>"
+                            data-text="FAQ">FAQ</a></li>
+                    <li><a class="gradient-link" href="#" data-text="Terms & Condition">Terms & Condition</a></li>
+                    <li><a class="gradient-link" href="#" data-text="Privacy Policy">Privacy Policy</a></li>
 
-
-            <div class="foot-col">
-                <div class="foot-col-header">
-                    <h5>INDUSTRIES</h5>
-
-                    <button type="button" class="foot-dropdown-btn" aria-label="Toggle Industries links"
-                        aria-expanded="false">
-                        <svg viewBox="0 0 10 6" fill="none" aria-hidden="true">
-                            <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                        </svg>
-                    </button>
-                </div>
-
-                <ul class="foot-dropdown-list">
-                    <li><a class="gradient-link" href="#" data-text="Agriculture">Agriculture</a></li>
-                    <li><a class="gradient-link" href="#" data-text="Defense">Defense</a></li>
-                    <li><a class="gradient-link" href="#" data-text="Telecom">Telecom</a></li>
-                    <li><a class="gradient-link" href="#" data-text="Logistics">Logistics</a></li>
-                    <li><a class="gradient-link" href="#" data-text="Energy">Energy</a></li>
                 </ul>
 
                 <h3 class="socials-heading">FOLLOW</h3>

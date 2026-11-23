@@ -7,7 +7,7 @@ get_header();
 
 <main class="grid-wrapper">
     <div class="grid-background">
-        <?php get_template_part('template-parts/about/about-hero'); ?>
+        <?php get_template_part('template-parts/r&d/research-and-development-hero'); ?>
 
 
         <?php get_template_part('template-parts/about/our-story'); ?>
