@@ -29,25 +29,18 @@ $gallery_base = get_template_directory_uri() . '/images/gallery/';
 
         <div class="company-gallery-grid">
 
-            <?php foreach ($gallery_images as $index => $image) : ?>
+            <?php foreach ($gallery_images as $index => $image): ?>
 
-                <div class="company-gallery-item"
-                     <?php echo $index >= 6 ? 'hidden' : ''; ?>>
+                <div class="company-gallery-item" <?php echo $index >= 6 ? 'hidden' : ''; ?>>
 
-                    <a
-                        href="#"
-                        class="company-gallery-link"
-                        data-gallery-image
+                    <a href="#" class="company-gallery-link" data-gallery-image
                         data-image-src="<?php echo esc_url($gallery_base . $image); ?>"
                         data-gallery-index="<?php echo esc_attr($index); ?>"
-                        aria-label="<?php echo esc_attr('View gallery image ' . ($index + 1)); ?>"
-                    >
+                        aria-label="<?php echo esc_attr('View gallery image ' . ($index + 1)); ?>">
 
-                        <img
-                            src="<?php echo esc_url($gallery_base . $image); ?>"
+                        <img src="<?php echo esc_url($gallery_base . $image); ?>"
                             alt="<?php echo esc_attr('LiHi Smart Batteries company gallery image ' . ($index + 1)); ?>"
-                            loading="lazy"
-                        >
+                            loading="lazy">
 
                         <span class="gallery-image-icon" aria-hidden="true">
                             ↗
@@ -61,16 +54,16 @@ $gallery_base = get_template_directory_uri() . '/images/gallery/';
 
         </div>
 
-        <?php if (count($gallery_images) > 6) : ?>
+        <?php if (count($gallery_images) > 6): ?>
 
             <div class="load-more-wrapper">
 
-                <button
-                    type="button"
-                    class="btn btn-outline load-more-btn"
-                    data-gallery-load
-                >
+                <button type="button" class="link-btn load-more-btn" data-gallery-load>
                     <span class="load-more-text">Load More Images</span>
+                    <svg width="15" height="10" viewBox="0 0 13 10" aria-hidden="true">
+                        <path d="M1,5 L11,5"></path>
+                        <polyline points="8 1 12 5 8 9"></polyline>
+                    </svg>
 
                     <span class="loader" aria-hidden="true">
                         <span class="bar1"></span>
@@ -92,19 +85,11 @@ $gallery_base = get_template_directory_uri() . '/images/gallery/';
 <!-- Gallery Lightbox -->
 <div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true">
 
-    <button
-        type="button"
-        class="gallery-lightbox-close"
-        aria-label="Close gallery"
-    >
+    <button type="button" class="gallery-lightbox-close" aria-label="Close gallery">
         &times;
     </button>
 
-    <button
-        type="button"
-        class="gallery-lightbox-arrow gallery-lightbox-prev"
-        aria-label="Previous image"
-    >
+    <button type="button" class="gallery-lightbox-arrow gallery-lightbox-prev" aria-label="Previous image">
         &#10094;
     </button>
 
@@ -113,11 +98,7 @@ $gallery_base = get_template_directory_uri() . '/images/gallery/';
         <span class="gallery-lightbox-counter"></span>
     </div>
 
-    <button
-        type="button"
-        class="gallery-lightbox-arrow gallery-lightbox-next"
-        aria-label="Next image"
-    >
+    <button type="button" class="gallery-lightbox-arrow gallery-lightbox-next" aria-label="Next image">
         &#10095;
     </button>
 
