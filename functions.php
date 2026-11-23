@@ -288,14 +288,6 @@ add_action('init', 'lihi_register_application_cpt');
 function lihi_enqueue_related_components_scripts()
 {
 
-    wp_enqueue_script(
-        'lihi-related-applications',
-        get_template_directory_uri() . '/js/related_applications.js',
-        array(),
-        '1.0',
-        true
-    );
-
     if (is_singular('product')) {
 
         wp_enqueue_script(

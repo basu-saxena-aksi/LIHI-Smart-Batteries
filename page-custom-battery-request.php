@@ -126,38 +126,9 @@ get_header();
                     </div>
                 </fieldset>
 
-                <fieldset class="cbr-form-group">
-                    <legend><span class="cbr-section-number">02</span> Application Details</legend>
-                    <div class="cbr-fields">
-                        <div class="cbr-field<?php echo isset($cbr_errors['industry']) ? ' cbr-field--error' : ''; ?>">
-                            <label for="cbr-industry">Industry <span class="cbr-required-mark"
-                                    aria-hidden="true">*</span></label>
-                            <select id="cbr-industry" name="cbr[industry]" required
-                                aria-invalid="<?php echo isset($cbr_errors['industry']) ? 'true' : 'false'; ?>">
-                                <option value="">Select an industry</option>
-                                <?php foreach (lihi_cbr_options()['industry'] as $industry): ?>
-                                    <option value="<?php echo esc_attr($industry); ?>" <?php selected(isset($cbr_values['industry']) ? $cbr_values['industry'] : '', $industry); ?>><?php echo esc_html($industry); ?></option>
-                                <?php endforeach; ?>
-                            </select>
-                            <?php if (isset($cbr_errors['industry'])): ?><span
-                                    class="cbr-field-error"><?php echo esc_html($cbr_errors['industry']); ?></span><?php endif; ?>
-                        </div>
-                        <div
-                            class="cbr-field<?php echo isset($cbr_errors['application']) ? ' cbr-field--error' : ''; ?>">
-                            <label for="cbr-application">Application / End Use <span class="cbr-required-mark"
-                                    aria-hidden="true">*</span></label>
-                            <input type="text" id="cbr-application" name="cbr[application]"
-                                value="<?php echo esc_attr(isset($cbr_values['application']) ? $cbr_values['application'] : ''); ?>"
-                                placeholder="How will the battery be used?" maxlength="200" required
-                                aria-invalid="<?php echo isset($cbr_errors['application']) ? 'true' : 'false'; ?>">
-                            <?php if (isset($cbr_errors['application'])): ?><span
-                                    class="cbr-field-error"><?php echo esc_html($cbr_errors['application']); ?></span><?php endif; ?>
-                        </div>
-                    </div>
-                </fieldset>
 
                 <fieldset class="cbr-form-group">
-                    <legend><span class="cbr-section-number">03</span> Battery Requirements</legend>
+                    <legend><span class="cbr-section-number">02</span> Battery Requirements</legend>
                     <div class="cbr-fields">
                         <div class="cbr-field<?php echo isset($cbr_errors['chemistry']) ? ' cbr-field--error' : ''; ?>">
                             <label for="cbr-chemistry">Battery Chemistry <span
@@ -228,7 +199,7 @@ get_header();
                 </fieldset>
 
                 <fieldset class="cbr-form-group">
-                    <legend><span class="cbr-section-number">04</span> Additional Information</legend>
+                    <legend><span class="cbr-section-number">03</span> Additional Information</legend>
                     <div class="cbr-fields">
                         <div
                             class="cbr-field cbr-field--full<?php echo isset($cbr_errors['requirements']) ? ' cbr-field--error' : ''; ?>">
@@ -263,9 +234,12 @@ get_header();
                 </fieldset>
 
                 <div class="cbr-submit-row">
-                    <button class="cbr-submit" type="submit">
-                        <span>SUBMIT CUSTOM BATTERY REQUEST</span>
-                        <span class="cbr-submit-arrow" aria-hidden="true">→</span>
+                    <button class="link-btn cbr-submit" type="submit">
+                        <span>SUBMIT REQUEST</span>
+                        <svg width="15" height="10" viewBox="0 0 13 10" aria-hidden="true">
+                            <path d="M1,5 L11,5"></path>
+                            <polyline points="8 1 12 5 8 9"></polyline>
+                        </svg>
                     </button>
                     <p>Our team will review your request and follow up with you.</p>
                 </div>

@@ -406,20 +406,6 @@ $show_requirements = (
 
     ?>
 
-
-    <!-- =====================================================
-         RELATED APPLICATIONS
-    ====================================================== -->
-
-    <?php
-
-    if (!empty($related_applications)) {
-        get_template_part('components/related_applications');
-    }
-
-    ?>
-
-
     <!-- =====================================================
          RELATED INDUSTRIES
     ====================================================== -->
@@ -429,5 +415,7 @@ $show_requirements = (
     ?>
 
 </main>
+
+<?php get_template_part('components/cta'); ?>
 
 <?php get_footer(); ?>

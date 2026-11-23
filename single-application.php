@@ -435,20 +435,6 @@ $show_requirements = (
 
     <?php endif; ?>
 
-
-    <!-- =====================================
-         RELATED APPLICATIONS
-    ====================================== -->
-
-    <?php if (!empty($related_applications)): ?>
-
-        <?php
-        get_template_part('components/related_applications');
-        ?>
-
-    <?php endif; ?>
-
-
     <!-- =====================================
          RELATED INDUSTRIES
     ====================================== -->

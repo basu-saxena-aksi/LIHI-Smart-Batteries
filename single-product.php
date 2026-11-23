@@ -638,7 +638,6 @@ if (have_posts()):
 
             <?php get_template_part('components/related_products'); ?>
 
-            <?php get_template_part('components/related_applications'); ?>
 
             <?php get_template_part('components/related_industries'); ?>
 
@@ -668,5 +667,6 @@ if (have_posts()):
     endwhile;
 endif;
 
+get_template_part('components/cta'); 
 get_footer();
 ?>

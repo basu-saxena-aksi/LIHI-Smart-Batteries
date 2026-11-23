@@ -1,4 +1,3 @@
-
 <?php
 /**
  * LiHi Service Cards
@@ -14,11 +13,11 @@ if (!defined('ABSPATH')) {
     <div class="wrap">
 
         <div class="section-head">
-        <div>
-            <h2 class="home-section-title">WHY CHOOSE <span style="color:var(--green)">LiHi</span></h2>
-            <p class="home-body-text">LiHi is more than a battery supplier. We are your power solutions partner.</p>
-        </div>
-        
+            <div>
+                <h2 class="home-section-title">WHY CHOOSE <span style="color:var(--green)">LiHi</span></h2>
+                <p class="home-body-text">LiHi is more than a battery supplier. We are your power solutions partner.</p>
+            </div>
+
         </div>
         <div class="lihi-svc__grid" data-lihi-services>
 
@@ -29,8 +28,8 @@ if (!defined('ABSPATH')) {
 
                 <div class="lihi-svc__in">
                     <svg class="lihi-svc__icon" viewBox="0 0 24 24" aria-hidden="true">
-                        <rect x="6" y="6" width="12" height="12" rx="2"/>
-                        <path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/>
+                        <rect x="6" y="6" width="12" height="12" rx="2" />
+                        <path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3" />
                     </svg>
 
                     <div>
@@ -47,8 +46,8 @@ if (!defined('ABSPATH')) {
 
                 <div class="lihi-svc__in">
                     <svg class="lihi-svc__icon" viewBox="0 0 24 24" aria-hidden="true">
-                        <circle cx="12" cy="12" r="3"/>
-                        <path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3"/>
+                        <circle cx="12" cy="12" r="3" />
+                        <path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3" />
                     </svg>
 
                     <div>
@@ -65,9 +64,9 @@ if (!defined('ABSPATH')) {
                 <div class="lihi-svc__face"></div>
 
                 <div class="lihi-svc__in">
-                    <svg class="lihi-svc__icon" viewBox="0 0 24 24" aria-hidden="true"> 
-                        <circle cx="12" cy="12" r="9"/>
-                        <path d="M3 12h18M12 3c2.5 2.5 2.5 15.5 0 18M12 3c-2.5 2.5-2.5 15.5 0 18"/>
+                    <svg class="lihi-svc__icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M3 12h18M12 3c2.5 2.5 2.5 15.5 0 18M12 3c-2.5 2.5-2.5 15.5 0 18" />
                     </svg>
 
                     <div>
@@ -84,7 +83,7 @@ if (!defined('ABSPATH')) {
 
                 <div class="lihi-svc__in">
                     <svg class="lihi-svc__icon" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/>
+                        <path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z" />
                     </svg>
 
                     <div>
@@ -101,7 +100,7 @@ if (!defined('ABSPATH')) {
 
                 <div class="lihi-svc__in">
                     <svg class="lihi-svc__icon" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M12 22c5-3 8-6.5 8-11a8 8 0 00-16 0c0 4.5 3 8 8 11z"/>
+                        <path d="M12 22c5-3 8-6.5 8-11a8 8 0 00-16 0c0 4.5 3 8 8 11z" />
                     </svg>
 
                     <div>
@@ -113,49 +112,7 @@ if (!defined('ABSPATH')) {
 
         </div>
 
-        <div class="lihi-svc__bottom">
-            <p class="lihi-svc__note">
-                <span class="badge-marquee-viewport">
-                    <span class="badge-marquee">
 
-                        <span>
-                            <svg width="16" height="16" viewBox="0 0 24 24"
-                                fill="currentColor" aria-hidden="true">
-                                <path d="M12 2L14.8 9.2L22 12L14.8 14.8L12 22L9.2 14.8L2 12L9.2 9.2Z"/>
-                            </svg>
-
-                            Need a battery tailored to your requirements?
-                            Contact our team
-                            for custom battery solutions.
-                        </span>
-
-                        <span aria-hidden="true">
-                            <svg width="16" height="16" viewBox="0 0 24 24"
-                                fill="currentColor">
-                                <path d="M12 2L14.8 9.2L22 12L14.8 14.8L12 22L9.2 14.8L2 12L9.2 9.2Z"/>
-                            </svg>
-
-                            Need a battery tailored to your requirements?
-                            <span class="lihi-svc__note-link">Contact our team</span>
-                            for custom battery solutions.
-                        </span>
-
-                    </span>
-                </span>
-            </p>
-
-            <a
-                href="<?php echo esc_url(home_url('/contact-us/')); ?>"
-                class="link-btn"
-                >
-                <span>Contact Us</span>
-
-                <svg width="15" height="10" viewBox="0 0 13 10" aria-hidden="true">
-                    <path d="M1,5 L11,5"></path>
-                    <polyline points="8 1 12 5 8 9"></polyline>
-                </svg>
-            </a>
-        </div>
 
     </div>
 
