@@ -25,6 +25,20 @@ $gallery_base = get_template_directory_uri() . '/images/gallery/';
 <section class="company-gallery-section">
     <div class="wrap">
 
+        <div class="company-gallery-header">
+
+            <span class="eyebrow">OUR IMAGES</span>
+
+            <h2>
+                Explore Our <span>Image Gallery</span>
+            </h2>
+
+            <p>
+                Discover our company, products and technology through our images.
+            </p>
+
+        </div>
+
         <!-- Your gallery heading -->
 
         <div class="company-gallery-grid">

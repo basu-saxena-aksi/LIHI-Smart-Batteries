@@ -24,14 +24,14 @@ $gallery_videos = [
     // ],
 
     [
-        'type'  => 'mp4',
-        'file'  => 'video-02.mp4',
+        'type' => 'mp4',
+        'file' => 'video-02.mp4',
         'title' => 'LiHi Company Video 2',
     ],
 
     [
-        'type'  => 'youtube',
-        'url'   => 'https://youtu.be/vaNE9mXGha8?si=1jDeaiKGe4wQa5O_',
+        'type' => 'youtube',
+        'url' => 'https://youtu.be/vaNE9mXGha8?si=1jDeaiKGe4wQa5O_',
         'title' => 'LiHi Company Video 3',
     ],
 
@@ -89,9 +89,7 @@ $get_youtube_id = function ($url) {
                 $video_id = '';
             }
         }
-    }
-
-    else {
+    } else {
         $video_id = '';
     }
 
@@ -118,16 +116,16 @@ foreach ($gallery_videos as $video) {
         }
 
         $valid_videos[] = [
-            'type'  => 'youtube',
-            'src'   => $youtube_id,
+            'type' => 'youtube',
+            'src' => $youtube_id,
             'title' => $title,
         ];
 
     } elseif ($type === 'mp4' && !empty($video['file'])) {
 
         $valid_videos[] = [
-            'type'  => 'mp4',
-            'src'   => $video_base . ltrim($video['file'], '/'),
+            'type' => 'mp4',
+            'src' => $video_base . ltrim($video['file'], '/'),
             'title' => $title,
         ];
     }
@@ -154,95 +152,55 @@ foreach ($gallery_videos as $video) {
         </div>
 
 
-        <?php if (!empty($valid_videos)) : ?>
+        <?php if (!empty($valid_videos)): ?>
 
             <div class="company-video-gallery-grid">
 
-                <?php foreach ($valid_videos as $index => $video) : ?>
+                <?php foreach ($valid_videos as $index => $video): ?>
 
-                    <div
-                        class="company-video-gallery-item"
-                        <?php echo $index >= 6 ? 'hidden' : ''; ?>
-                    >
+                    <div class="company-video-gallery-item" <?php echo $index >= 6 ? 'hidden' : ''; ?>>
 
-                        <div
-                            class="company-video-wrapper"
-                            data-video-type="<?php echo esc_attr($video['type']); ?>"
+                        <div class="company-video-wrapper" data-video-type="<?php echo esc_attr($video['type']); ?>"
                             data-video-src="<?php echo esc_attr($video['src']); ?>"
-                            data-video-title="<?php echo esc_attr($video['title']); ?>"
-                        >
+                            data-video-title="<?php echo esc_attr($video['title']); ?>">
 
-                            <?php if ($video['type'] === 'youtube') : ?>
+                            <?php if ($video['type'] === 'youtube'): ?>
 
-                                <button
-                                    type="button"
-                                    class="company-youtube-thumbnail"
-                                    data-video-open
-                                    aria-label="<?php echo esc_attr('Play ' . $video['title']); ?>"
-                                >
+                                <button type="button" class="company-youtube-thumbnail" data-video-open
+                                    aria-label="<?php echo esc_attr('Play ' . $video['title']); ?>">
 
-                                    <img
-                                        src="<?php echo esc_url('https://img.youtube.com/vi/' . $video['src'] . '/hqdefault.jpg'); ?>"
-                                        alt="<?php echo esc_attr($video['title']); ?>"
-                                        loading="lazy"
-                                    >
+                                    <img src="<?php echo esc_url('https://img.youtube.com/vi/' . $video['src'] . '/hqdefault.jpg'); ?>"
+                                        alt="<?php echo esc_attr($video['title']); ?>" loading="lazy">
 
                                     <span class="company-youtube-play" aria-hidden="true">
-                                        <svg
-                                            width="28"
-                                            height="28"
-                                            viewBox="0 0 24 24"
-                                            fill="currentColor"
-                                            aria-hidden="true"
-                                        >
-                                            <path d="M8 5.14v13.72c0 .78.85 1.26 1.52.86l11-6.86a1 1 0 0 0 0-1.72l-11-6.86A1 1 0 0 0 8 5.14Z"/>
+                                        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                            <path
+                                                d="M8 5.14v13.72c0 .78.85 1.26 1.52.86l11-6.86a1 1 0 0 0 0-1.72l-11-6.86A1 1 0 0 0 8 5.14Z" />
                                         </svg>
                                     </span>
 
                                 </button>
 
-                            <?php else : ?>
+                            <?php else: ?>
 
-                                <video
-                                    controls
-                                    preload="metadata"
-                                    playsinline
-                                    muted
-                                    loop
-                                    aria-label="<?php echo esc_attr($video['title']); ?>"
-                                >
-                                    <source
-                                        src="<?php echo esc_url($video['src']); ?>"
-                                        type="video/mp4"
-                                    >
+                                <video controls preload="metadata" playsinline muted loop
+                                    aria-label="<?php echo esc_attr($video['title']); ?>">
+                                    <source src="<?php echo esc_url($video['src']); ?>" type="video/mp4">
                                     Your browser does not support HTML5 video.
                                 </video>
 
                             <?php endif; ?>
 
 
-                            <button
-                                type="button"
-                                class="company-video-expand"
-                                data-video-expand
-                                aria-label="<?php echo esc_attr('Open ' . $video['title'] . ' in popup'); ?>"
-                            >
+                            <button type="button" class="company-video-expand" data-video-expand
+                                aria-label="<?php echo esc_attr('Open ' . $video['title'] . ' in popup'); ?>">
 
-                                <svg
-                                    width="20"
-                                    height="20"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    aria-hidden="true"
-                                >
-                                    <path d="M15 3h6v6"/>
-                                    <path d="M9 21H3v-6"/>
-                                    <path d="M21 3l-7 7"/>
-                                    <path d="M3 21l7-7"/>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M15 3h6v6" />
+                                    <path d="M9 21H3v-6" />
+                                    <path d="M21 3l-7 7" />
+                                    <path d="M3 21l7-7" />
                                 </svg>
 
                             </button>
@@ -256,15 +214,11 @@ foreach ($gallery_videos as $video) {
             </div>
 
 
-            <?php if (count($valid_videos) > 6) : ?>
+            <?php if (count($valid_videos) > 6): ?>
 
                 <div class="load-more-wrapper">
 
-                    <button
-                        type="button"
-                        class="load-more-btn"
-                        data-video-gallery-load
-                    >
+                    <button type="button" class="load-more-btn" data-video-gallery-load>
                         Load More
                     </button>
 
@@ -273,7 +227,7 @@ foreach ($gallery_videos as $video) {
             <?php endif; ?>
 
 
-        <?php else : ?>
+        <?php else: ?>
 
             <p>No videos are currently available.</p>
 
@@ -286,26 +240,14 @@ foreach ($gallery_videos as $video) {
 
 <!-- VIDEO LIGHTBOX -->
 
-<div
-    class="company-video-lightbox"
-    id="companyVideoLightbox"
-    aria-hidden="true"
->
+<div class="company-video-lightbox" id="companyVideoLightbox" aria-hidden="true">
 
-    <button
-        type="button"
-        class="company-video-lightbox-close"
-        aria-label="Close video"
-    >
+    <button type="button" class="company-video-lightbox-close" aria-label="Close video">
         &times;
     </button>
 
 
-    <button
-        type="button"
-        class="company-video-lightbox-arrow company-video-lightbox-prev"
-        aria-label="Previous video"
-    >
+    <button type="button" class="company-video-lightbox-arrow company-video-lightbox-prev" aria-label="Previous video">
         &#10094;
     </button>
 
@@ -314,26 +256,16 @@ foreach ($gallery_videos as $video) {
 
         <!-- MP4 PLAYER -->
 
-        <video
-            class="company-video-lightbox-player"
-            controls
-            playsinline
-            preload="metadata"
-        >
+        <video class="company-video-lightbox-player" controls playsinline preload="metadata">
             Your browser does not support HTML5 video.
         </video>
 
 
         <!-- YOUTUBE PLAYER -->
 
-        <iframe
-            class="company-youtube-lightbox-player"
-            src=""
-            title="LiHi YouTube Video"
+        <iframe class="company-youtube-lightbox-player" src="" title="LiHi YouTube Video"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-        ></iframe>
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
         <span class="company-video-lightbox-counter"></span>
@@ -341,11 +273,7 @@ foreach ($gallery_videos as $video) {
     </div>
 
 
-    <button
-        type="button"
-        class="company-video-lightbox-arrow company-video-lightbox-next"
-        aria-label="Next video"
-    >
+    <button type="button" class="company-video-lightbox-arrow company-video-lightbox-next" aria-label="Next video">
         &#10095;
     </button>
 

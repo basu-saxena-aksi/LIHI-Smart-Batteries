@@ -436,8 +436,12 @@ get_header();
 
                 </div>
 
-                <a href="#" class="btn btn-primary">
-                    CONTACT US
+                <a href="#" class="link-btn">
+                    <span>CONTACT US</span>
+                    <svg width="15" height="10" viewBox="0 0 13 10" aria-hidden="true">
+                        <path d="M1,5 L11,5"></path>
+                        <polyline points="8 1 12 5 8 9"></polyline>
+                    </svg>
                 </a>
 
             </div>
